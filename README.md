@@ -1,2 +1,2 @@
-# YOHO
-a webpack for YOHO
+# Enjoy
+a webapp for Enjoy
