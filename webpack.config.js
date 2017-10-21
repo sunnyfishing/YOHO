@@ -28,7 +28,8 @@ var public={
 	//别名配置
 	resolve:{
 		alias:{
-			'vue$':'vue/dist/vue.js'
+			'vue$':'vue/dist/vue.js',
+			'vue-router$': 'vue-router/dist/vue-router.js'
 		}
 	},
 }
@@ -91,7 +92,7 @@ var dev={
 		        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
 		        loader: 'url-loader',
 		        options: {
-		          limit: 10000,
+		          limit: 1000,
 		          name: 'media/images/[name].[ext]'
 		        }
 		    },
@@ -101,7 +102,7 @@ var dev={
 		        test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
 		        loader: 'url-loader',
 		        options: {
-		          limit: 10000,
+		          limit: 1000,
 		          name: 'media/mp4/[name].[ext]'
 		        }
 		    },
@@ -111,7 +112,7 @@ var dev={
 		        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
 		        loader: 'url-loader',
 		        options: {
-		          limit: 10000,
+		          limit: 10,
 		          name: 'media/iconfont/[name].[ext]'
 		        }
 		    }
@@ -136,13 +137,18 @@ var dev={
 		/*new openBrowser({
 			url:'http://localhost:9000'
 		})*/
-	]
+	],
+	externals:{
+		'vue':'window.Vue',
+		'vue-router':'window.VueRouter',
+		'axios':'window.axios'
+	}
 }
 var prd={
 	//出口
 	output:{
 		filename:'[name]-[chunkhash:6].js',         //[name]为chunk name
-		path:__dirname+'/prd'   //必须是绝对路径
+		path:__dirname+'/prd'   //必须是绝对路径 
 	},
 	//模块
 	module:{
@@ -240,7 +246,11 @@ var prd={
 				comments:false
 			}
 		})
-	]
+	],
+	externals:{
+		'vue':'window.Vue',
+		'vue-router':'window.VueRouter'
+	}
 }
 if(process.env.NODE_ENV == 'dev'){
 	module.exports = Object.assign({}, public, dev)
