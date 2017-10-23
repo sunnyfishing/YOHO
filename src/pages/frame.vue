@@ -1,6 +1,8 @@
 <template lang="html">
 	<div class="main">
-		<div class="section"></div>
+		<div class="section">
+			<router-view></router-view>
+		</div>
 		<footer>
 			<ul>
 				<router-link tag='li' to="/main">
