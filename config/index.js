@@ -27,11 +27,21 @@ module.exports = {
   },
   dev: {
     env: require('./dev.env'),
+<<<<<<< HEAD
     port: process.env.PORT || 2000,
     autoOpenBrowser: false,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {},
+=======
+    port: process.env.PORT || 4000,
+    autoOpenBrowser: false,
+    assetsSubDirectory: 'static',
+    assetsPublicPath: '/',
+    proxyTable: {
+    	
+    },
+>>>>>>> master
     // CSS Sourcemaps off by default because relative paths are "buggy"
     // with this option, according to the CSS-Loader README
     // (https://github.com/webpack/css-loader#sourcemaps)

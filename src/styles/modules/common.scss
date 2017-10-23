@@ -1,0 +1,16 @@
+$base_color:#414141;
+#app{
+    height: 100%;
+    width: 100%;
+    background: white;
+}
+@font-face {
+  font-family: 'yofont';
+  src: url('../assets/iconfont/iconfont.woff') format('woff'), 
+       url('../assets/iconfont/iconfont.ttf') format('truetype'),
+}
+@font-face {
+  font-family: 'yofont';
+  src: url('../assets/iconfont/iconfont1.woff') format('woff'), 
+       url('../assets/iconfont/iconfont1.ttf') format('truetype')
+}
