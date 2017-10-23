@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-import Vue from 'vue'
-import Router from 'vue-router'
-//import HelloWorld from '@/components/HelloWorld'
-=======
 import Vue from 'vue';
 import Router from 'vue-router';
 import Frame from '@/pages/frame.vue';
@@ -11,21 +6,10 @@ import Classify from '@/pages/classify.vue';
 import Stroll from '@/pages/stroll.vue';
 import Shopcat from '@/pages/shopcat.vue';
 import Mine from '@/pages/mine.vue';
->>>>>>> master
 
 Vue.use(Router)
 
 export default new Router({
-<<<<<<< HEAD
-  routes: [
-    {
-      path: '/',
-     /* name: 'Hello',
-      component: HelloWorld*/
-    }
-  ]
-})
-=======
 	linkActiveClass:"active",
 	routes: [{
 		path: '/',
@@ -54,4 +38,3 @@ export default new Router({
 		]
 	}]
 })
->>>>>>> master
