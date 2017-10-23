@@ -1,0 +1,31 @@
+.main{
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    .search{
+        height: .4rem;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        .con{
+            @include flexbox();
+            height: 100%;
+            i{
+                width: 40px;
+                text-align: center;
+                line-height: .4rem;
+                font-size: .24rem;
+            }
+            .input{
+                @include flex();
+                position: relative;
+                input{
+                    width: 100%;
+                }
+                i{
+                    position: absolute;
+                }
+            }
+        }
+    }
+}

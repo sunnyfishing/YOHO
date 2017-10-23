@@ -6,5 +6,11 @@ $base_color:#414141;
 }
 @font-face {
   font-family: 'yofont';
-  src: url('../assets/iconfont/iconfont.woff') format('woff'), url('../assets/iconfont/iconfont.ttf') format('truetype')
+  src: url('../assets/iconfont/iconfont.woff') format('woff'), 
+       url('../assets/iconfont/iconfont.ttf') format('truetype'),
+}
+@font-face {
+  font-family: 'yofont';
+  src: url('../assets/iconfont/iconfont1.woff') format('woff'), 
+       url('../assets/iconfont/iconfont1.ttf') format('truetype')
 }
