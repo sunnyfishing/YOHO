@@ -1,0 +1,31 @@
+{
+    "alg": "SALT_MD5",
+    "code": 200,
+    "data": {
+        "boy": [
+            {
+                "sub": [
+	                {
+	                	"category_name": "棉衣"
+	                },
+	                { 
+	                	"category_name": "皮衣"
+	                }
+                ]
+                 
+            },
+            {
+                "sub": [
+	                {
+	                	"category_name": "棉衣"
+	                },
+	                { 
+	                	"category_name": "皮衣"
+	                }
+                ]
+            }
+        ]
+    },
+    "md5": "e4460d965e939313f958f70157ad754b",
+    "message": "category List."
+}

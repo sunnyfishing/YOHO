@@ -1,20 +1,50 @@
+<!--分类页面，使用100%布局页面-->
 <template lang="html">
-	
+	<div class="list">
+		<div class="nav1">
+			<b>dd</b>
+			<ul>
+				<li><a href="#">品类</a></li>
+				<li><a href="#">品牌</a></li>
+				<li><a href="#">关注</a></li>
+			</ul>
+		</div>
+		<div class="nav2">
+			<ul>
+				<li class="active"><a href="#">Men</a></li>
+				<li><a href="#">Women</a></li>
+				<li><a href="#">Kids</a></li>
+			</ul>
+		</div>
+		<div class="detail">
+			<!--左侧sort-list栏-->
+			<div class="sortList">
+				<sortlist></sortlist>
+			</div>
+			<!--右侧sort-detail栏-->
+			<div class="sortdet">
+				<sortdet></sortdet>
+			</div>
+		</div>
+	</div>
 </template>
 
 <script>
+	import sortlist from "./classify/sort-list.vue" 
+	import sortdet from "./classify/sort-det.vue"
 	export default {
-		data(){
-			return {
-				
-			}
-		},
-		components:{
-			
-		}
+	  data() {
+	    return {
+	      msg: 'aa'
+	    }
+	  },
+	  methods: {
+	
+	  },
+	  components: {
+	    sortlist,
+	    sortdet
+	  }
 	}
 </script>
 
-<style lang="scss" scoped>
-	
-</style>
