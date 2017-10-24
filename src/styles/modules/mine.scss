@@ -13,6 +13,8 @@ input,button{
 #mine{
     width: 100%;
     background: #F0F0F0;
+    height: 100%;
+    overflow: hidden;
     .mine-head{
         height: 1.55rem;
         border: 1px solid black;

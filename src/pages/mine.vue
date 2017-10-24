@@ -43,7 +43,7 @@
 					</li>
 					<li>
 						<i class="yo-ico"></i>
-						<sapn>待发货</sapn>
+						<span>待发货</span>
 					</li>
 					<li>
 						<i class="yo-ico"></i>
@@ -72,7 +72,7 @@
 					</li>
 					<li>
 						<i class="yo-ico"></i>
-						<sapn>有货币</sapn>
+						<span>有货币</span>
 					</li>
 					<li>
 						<i class="yo-ico"></i>
