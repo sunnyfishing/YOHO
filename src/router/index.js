@@ -6,6 +6,9 @@ import Classify from '@/pages/classify.vue';
 import Stroll from '@/pages/stroll.vue';
 import Shopcat from '@/pages/shopcat.vue';
 import Mine from '@/pages/mine.vue';
+import Login from'@/pages/login.vue';
+import Register from '@/pages/register.vue';
+import Register_dis from '@/pages/register_dis.vue';
 
 import sortDet from '@/pages/classify/sort-det.vue';
 
@@ -40,7 +43,29 @@ export default new Router({
 			{
 				path: '/mine',
 				component: Mine,
-			}
+				name:'mine'
+			},
 		]
+<<<<<<< HEAD
 	}]
 })
+=======
+	},
+	{
+		path:'/login',
+		component:Login,
+		name:'login'
+	},
+	{
+		path:'/register',
+		component:Register,
+		name:'register'
+	},
+	{
+		path:'/register_dis',
+		component:Register_dis,
+		name:'register_dis'
+	}
+	]
+})
+>>>>>>> zzz

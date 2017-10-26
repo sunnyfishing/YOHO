@@ -1,0 +1,58 @@
+@charset 'utf-8';
+
+#register_dis{
+    color: #bbb;
+    font-size: .14rem;
+    width: 100%;
+    height: 100%;
+    background: #444;
+    @include flexbox();
+    @include flex-direction(column);
+    padding: 0 .14rem;
+    .register_dis_head{
+        width: 100%;
+        height: .42rem;
+        text-align: center;
+        line-height: .42rem;
+        color: #E3E3E3;
+        font-size: .16rem;
+        >p{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            line-height: .42rem;
+            i{
+                @include border(2px 2px 2px 2px,ddd,solid ,50%);
+                text-align: center;
+                position: absolute;
+                top: .1rem;
+                left: 0;
+                line-height: .28rem;
+                width: .28rem;
+                height: .28rem;
+            }
+        }
+    }
+    .register_dis_all{
+        @include flex();
+        width: 100%;
+        height: 100%;
+        ul{
+            width: 100%;
+            height: 100%;
+            margin-top: .05rem;
+            li{
+                height: .4rem;
+                width: 100%;
+                line-height: .4rem;
+                @include border(0 0 1px 0,white,solid);
+                padding-left: .05rem;
+            }
+        }
+    }
+}
+//#register_dis{
+//  width: 100%;
+//  height: 100%;
+//  background: #444444;
+//}

@@ -10,7 +10,19 @@ $base_color:#414141;
        url('../assets/iconfont/iconfont.ttf') format('truetype'),
 }
 @font-face {
-  font-family: 'yofont';
-  src: url('../assets/iconfont/iconfont1.woff') format('woff'), 
-       url('../assets/iconfont/iconfont1.ttf') format('truetype')
+font-family: 'yofont';
+src: url('../assets/iconfont/iconfont1.woff') format('woff'), 
+       url('../assets/iconfont/iconfont1.ttf') format('truetype'),
 }
+@font-face {
+font-family: 'yofont';
+src: url('../assets/iconfont/iconfont2.woff') format ('woff'),
+       url('../assets/iconfont/iconfont2.ttf') format ('truetype'),
+}
+//@font-face {
+//  font-family: 'yofont';
+//  src: url('../assets/iconfontmine/iconfont.woff') format ('woff'),
+//     url('../assets/iconfontmine/iconfont.ttf') format ('truetype'),
+//}
+
+

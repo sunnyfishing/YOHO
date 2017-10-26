@@ -1,3 +1,4 @@
+@charset 'utf-8';
 @import './usage/core/reset.scss';
 @import './modules/common.scss';
 @import './modules/frame.scss';
@@ -6,4 +7,6 @@
 @import './modules/stroll.scss';
 @import './modules/shopcat.scss';
 @import './modules/mine.scss';
-
+@import './modules/login.scss';
+@import './modules/register.scss';
+@import './modules/register_dis.scss';
