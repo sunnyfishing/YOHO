@@ -45,7 +45,8 @@ export default new Router({
 				component: Mine,
 				name:'mine'
 			},
-		],
+		]
+		},
 		{
 			path:'/login',
 			component:Login,
@@ -61,5 +62,5 @@ export default new Router({
 			component:Register_dis,
 			name:'register_dis'
 		}
-	}]
+	]
 })
