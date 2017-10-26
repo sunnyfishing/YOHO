@@ -1,0 +1,140 @@
+@charset 'utf-8';
+
+$register_border_color:#777;
+%register_con{
+    width: 100%;
+    height: .42rem;
+    @include border(1px 1px 1px 1px ,$register_border_color,solid,3px)
+    background:#575757;
+    @include flexbox();
+    line-height: .42rem;
+    font-size:.12rem;
+}
+#register{
+    @include flexbox();
+    @include flex-direction(column);
+    width: 100%;
+    height: 100%;
+    background:#444444;
+    color: #ECECEC;
+    padding: 0 .1rem;
+    .register_head{
+        height: .45rem;
+        width: 100%;
+        line-height: .45rem;
+        text-align: center;
+        p{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            letter-spacing:1px;
+            i{
+                position: absolute;
+                top: .1rem;
+                right: 0;
+                width: .28rem;
+                height: .28rem;
+                border: 1px solid $register_border_color;
+                font-size: .24rem;
+                line-height: .28rem;
+                border-radius: 50%;
+            }
+        }
+    }
+    .register_dex{
+        @include flex();
+        width: 100%;
+        height: 100%;
+        letter-spacing: 1px;
+        position: relative;
+        .alert{
+            display: block;
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%,0);
+            z-index: 1000;
+            width: 70%;
+            height: 20%;
+            background: rgba(200,200,200,0.9);
+            @include border-radius(5px);
+            text-align: center;
+            padding-top: 10%;
+            color: #333;
+            font-weight: bold;
+            transition: all 1s linear;
+        }
+        .reg_suc{
+            display: block;
+            position: absolute;
+            bottom:10%;
+            left: 50%;
+            transform:translate(-50%,0);
+            background: #222;
+            padding: 5px;
+            @include border-radius(5px);
+            text-align: center;
+            transition: all 3s linear;
+        }
+        .register_dis{
+            @extend %register_con;
+              padding-left: .1rem;
+            .register_dis_all{
+                @include flex();
+                width: 100%;
+            }
+            .register_dis_con{
+                width: 1rem;
+                height: 100%;
+                @include flexbox();
+                @include justify-content(flex-end);
+                margin-right:.1rem;
+                span{
+                    font-size:.12rem;
+                }
+            }
+        }
+        .register_num{
+            @extend %register_con;
+            padding-left: .1rem;
+            margin-top: .2rem;
+            input{
+                @include flex();
+                margin-left: .1rem;
+                background: transparent;
+                width: 100%;
+                caret-color:lightgreen;
+            }
+        }
+        .register_code{
+            @extend %register_con;
+            padding-left: .1rem;
+            margin-top:.2rem;
+            input{
+                @include flex();
+                margin-left: .1rem;
+                background: transparent;
+                width: 100%;
+                caret-color:lightgreen;
+            }
+        }
+        .next_active{
+            background: #34A74A!important;
+        }
+        .register_next{
+          @extend %register_con;
+          margin-top: .2rem;  
+          background: #A2A2A2;
+          font-size:.14rem;
+//        text-align: center;
+          @include justify-content(center);
+        }
+        >p{
+            margin-top:.1rem ;
+            width: 100%;
+            font-size: .12rem;
+            text-align: center;
+        }
+    }
+}
+
