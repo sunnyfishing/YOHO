@@ -1,0 +1,96 @@
+.list{
+    .detail{
+        .sortdet{
+            .det{
+                width: 100%;
+                margin-left: .08rem;
+                .goods{
+                    width: 100%;
+                    @include flexbox();
+                    @include flex-direction(column);
+                    .goodsTit{
+                        height: .27rem;
+                        width: 100%;
+                        line-height: .27rem;
+                        text-align: center;
+                    }
+                    .goodsDet{
+                        width: 100%;
+                        ul{
+                            @include flexbox();
+                            @include flex-direction(row);
+                            @include flex-wrap(wrap);                            
+                            li{
+                                height: .8rem;
+                                width: .7rem;
+                                background: #f7f7f7;
+                                margin:0 .07rem .07rem 0;
+                                @include flexbox();
+                                @include flex-direction(column);
+                                img{
+                                    height: .6rem;
+                                    width: 100%;
+                                }
+                                span{
+                                    @include flex(1);
+                                    display: block;
+                                    line-height: .2rem;
+                                    font-size: .12rem;
+                                    width: 100%;
+                                    text-align: center;
+                                }
+                            }
+                            li:last-child{
+                                span{
+                                    height: .8rem;
+                                    line-height: .8rem;
+                                    font-size: .14rem;
+                                    color:#d9dbd8;                                    
+                                }
+                                
+                            }
+                        }
+                    }
+                } 
+                .logo{
+                    width: 100%;
+                    @include flexbox();
+                    @include flex-direction(column);
+                    .logoTit{
+                        height: .27rem;
+                        width: 100%;
+                        line-height: .27rem;
+                        text-align: center;
+                    }
+                    .logoDet{
+                        width: 100%;
+                        ul{
+                            @include flexbox();
+                            @include flex-direction(row);
+                            @include flex-wrap(wrap);                            
+                            li{
+                                height: .8rem;
+                                width: .7rem;
+                                margin:0 .07rem .07rem 0;
+                                @include flexbox();
+                                @include flex-direction(column);
+                                img{
+                                    height: .6rem;
+                                    width: 100%;
+                                }
+                                span{
+                                    @include flex(1);
+                                    display: block;
+                                    line-height: .2rem;
+                                    font-size: .12rem;
+                                    width: 100%;
+                                    text-align: center;
+                                }
+                            }
+                        }
+                    }
+                }                
+            }
+        }
+    }
+}

@@ -10,7 +10,11 @@ html{
     .section{
         @include flex();
         width:100%;
+<<<<<<< HEAD
         overflow: scroll;
+=======
+        overflow-y: scroll;
+>>>>>>> YOHO-hou
     }
     footer{
         width:100%;
