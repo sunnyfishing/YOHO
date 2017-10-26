@@ -32,6 +32,13 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
+    	'/api': {
+        target: 'https://api.yoho.cn/',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': ''
+        }
+      }
     	
     },
     // CSS Sourcemaps off by default because relative paths are "buggy"

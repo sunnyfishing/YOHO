@@ -30,8 +30,9 @@
 </template>
 
 <script>
-	import sortlist from "./classify/sort-list.vue" 
-	import sortdet from "./classify/sort-det.vue"
+	import sortlist from "./classify/sort-list.vue" ;
+	import sortdet from "./classify/sort-det.vue";
+	
 	export default {
 	  data() {
 	    return {
@@ -42,8 +43,8 @@
 	
 	  },
 	  components: {
-	    sortlist,
-	    sortdet
+	    sortdet,
+	    sortlist
 	  }
 	}
 </script>

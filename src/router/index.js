@@ -7,6 +7,8 @@ import Stroll from '@/pages/stroll.vue';
 import Shopcat from '@/pages/shopcat.vue';
 import Mine from '@/pages/mine.vue';
 
+import sortDet from '@/pages/classify/sort-det.vue';
+
 Vue.use(Router)
 
 export default new Router({
@@ -22,6 +24,10 @@ export default new Router({
 			{
 				path: '/classify',
 				component: Classify,
+			},
+			{
+				path: '/sort-det',
+				component: sortDet,
 			},
 			{
 				path: '/stroll',

@@ -61,7 +61,7 @@ body{
                     li:first-child{
                         @include border(0);
                     }
-                    .active{
+                    .activeClassify{
                         a{
                             color:#000000;
                         }
@@ -70,10 +70,18 @@ body{
             }
         }
         .detail{
-            @include flexbox();
             @include flex(1);
-            background: #00AFC7;
+            @include flexbox();
             width: 100%;
+            .sortList{
+                width: .78rem;
+                overflow-y: scroll;
+            }
+            .sortdet{
+                @include flex(1);
+                overflow-y: scroll;
+            }
+            
         }
         
     }
