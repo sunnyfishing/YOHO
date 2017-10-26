@@ -10,6 +10,7 @@ html{
     .section{
         @include flex();
         width:100%;
+        overflow: scroll;
     }
     footer{
         width:100%;
@@ -30,7 +31,7 @@ html{
                     text-align: center;
                 }
                 span{
-                    font-size: 12px;
+                    font-size: .12rem;
                 }
                 i{
                     font-size: .17rem;
