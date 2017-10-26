@@ -6,7 +6,6 @@ import '@/styles/index.scss';
 import store from './store'
 
 import router from '@/router';
-import store from '@/store';
 
 var vm = new Vue({
 	el:'#app',
