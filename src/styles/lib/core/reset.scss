@@ -236,7 +236,6 @@ input[type="file"]::-webkit-file-upload-button,
 input[type="search"]::-webkit-search-cancel-button {
     @include appearance;
 }
-
 // 1. 清除 summary 的展开收起标识
 ::-webkit-details-marker {
     display: none;

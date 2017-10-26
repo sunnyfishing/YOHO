@@ -1,8 +1,10 @@
+@charset "UTF-8";
 .main{
-    height: 100%;
     width: 100%;
-    overflow: auto;
+    height: 100%;
+    overflow-y: scroll;
     .search{
+        z-index: 1000;
         height: .4rem;
         position: fixed;
         top: 0;
@@ -10,20 +12,177 @@
         .con{
             @include flexbox();
             height: 100%;
+            line-height: .4rem;
             i{
-                width: 40px;
+                width: .4rem;
                 text-align: center;
-                line-height: .4rem;
                 font-size: .24rem;
+                color: white;
             }
             .input{
                 @include flex();
                 position: relative;
                 input{
                     width: 100%;
+                    @include border-radius(5px);
+                    border:0;
+                    height: .26rem;
+                    padding-left: .36rem;
                 }
                 i{
                     position: absolute;
+                    top: 0;
+                    color: lightgray;
+                    font-size: .2rem;
+                }
+                i:nth-child(3){
+                    right: 0;
+                }
+            }
+        }
+    }
+    .swipe{
+        height: 2.4rem;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .swipe2{
+        height: 2rem;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .new{
+        padding-top: 15px;
+        width: 92%;
+        margin: 0 auto;
+        img{
+            width: 100%;
+            height: 1.47rem;
+        }
+        .small{
+            padding-top: 10px;
+            img{
+                width: 1.47rem;
+                &:nth-child(1){
+                    float: left;
+                }
+                &:nth-child(2){
+                    float: right;
+                }
+            }
+        }
+    }
+    .list{
+        width: 92%;
+        margin: 0 auto;
+        padding-top: 20px;
+        height: 3.1rem;
+        >img{
+            width: 100%;
+            height: 1.42rem;
+        }
+        ul{
+            margin-top: 10px;
+            height: 1.42rem;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            width: 100%;
+            display: flex;
+            li{
+                flex: 1;
+                height: 100%;
+                margin-right: 10px;
+                img{
+                    width: .84rem;
+                    height: 1.12rem;
+                }
+                span{
+                    display: block;
+                    width: .84rem;
+                    height: .3rem;
+                    line-height: .3rem;
+                    text-align: center;
+                    font-size: .12rem;
+                }
+            }
+        }
+    }
+    .classify{
+        width: 100%;
+        height: 2.67rem;
+        ul{
+            width: 100%;
+            height: 100%;
+            @include border(1px 0 0 0);
+            li{
+                width: 25%;
+                height: 33.3333%;
+                float: left;
+                @include border(0 1px 1px 0);
+                img{
+                    height: 100%;
+                    width: 100%;
+                }
+                &:nth-child(4n){
+                    @include border(0 0 1px 0);
+                }
+            }
+        }
+    }
+    .list2{
+        width: 92%;
+        margin: 0 auto;
+        padding-top: 20px;
+        height: 2.6rem;
+        >img{
+            width: 100%;
+            height: 1.42rem;
+        }
+        ul{
+            margin-top: 12px;
+            height: .84rem;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            width: 100%;
+            display: flex;
+            li{
+                flex: 1;
+                height: 100%;
+                margin-right: 12px;
+                img{
+                    width: 1.26rem;
+                    height: .84rem;
+                }
+            }
+        }
+    }
+    .list3{
+        width: 92%;
+        margin: 0 auto;
+        padding-top: 20px;
+        height: 2.9rem;
+        >img{
+            width: 100%;
+            height: 1.42rem;
+        }
+        ul{
+            margin-top: 10px;
+            height: 1.12rem;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            width: 100%;
+            display: flex;
+            li{
+                flex: 1;
+                height: 100%;
+                margin-right: 10px;
+                img{
+                    width: .84rem;
+                    height: 1.12rem;
                 }
             }
         }
