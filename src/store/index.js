@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import Vue from 'vue';
 import Vuex from 'vuex';
 import axios from 'axios'
@@ -7,7 +6,9 @@ const store = new Vuex.Store({
 	state:{
 		like_pages:1,
 		like_info:[],
-		like_more:true
+		like_more:true,
+		user_info:[],
+		login_loading:0
 	},
 	getters:{
 		likeInfo:state=>state.like_info
@@ -30,25 +31,4 @@ const store = new Vuex.Store({
 	}
 })
 export default store
-=======
 
-import vue from 'vue';
-import Vuex from 'vuex';
-
-vue.use(Vuex);
-
-const store=new Vuex.Store({
-	state:{
-		user_info:[],
-		login_loading:0
-	},
-	actions:{
-		
-	},
-	mutations:{
-		
-	}
-})
-
-export default store;
->>>>>>> zzz
