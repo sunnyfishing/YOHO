@@ -45,27 +45,21 @@ export default new Router({
 				component: Mine,
 				name:'mine'
 			},
+			{
+				path:'/login',
+				component:Login,
+				name:'login'
+			},
+			{
+				path:'/register',
+				component:Register,
+				name:'register'
+			},
+			{
+				path:'/register_dis',
+				component:Register_dis,
+				name:'register_dis'
+			}
 		]
-<<<<<<< HEAD
 	}]
 })
-=======
-	},
-	{
-		path:'/login',
-		component:Login,
-		name:'login'
-	},
-	{
-		path:'/register',
-		component:Register,
-		name:'register'
-	},
-	{
-		path:'/register_dis',
-		component:Register_dis,
-		name:'register_dis'
-	}
-	]
-})
->>>>>>> zzz
