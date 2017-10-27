@@ -25,18 +25,36 @@
 			</label>
 			<label class="register_code">
 				<span>潮流口令</span>
-				<input type="password" name="" id="" value="" ref="reg_psd"/>
+				<input type="password" name="" id="" value="" ref="reg_user"/>
 			</label>
 			<div :class="register_next_class" @click="register_next">
 				<span>下一步</span>
 			</div>
 			<p>Yoho！Family账号可登录Yoho！Buy有货、Yoho！Now、mars及SHOW</p>
 		</div>
+		<mt-popup v-model='popupVisible' position="right" class="reg_num">
+			<mt-header title="输入验证码" class='reg_num_tit'>
+				<mt-button class='reg_num_exit' slot='left'><</mt-button>
+			</mt-header>
+			<p>验证码已发送至 <span>+86 {{reg_phone}}</span></p>
+			<input type="text" v-model='reg_code'/>
+			<button  @click="reg_num_btn">下一步</button>
+			<mt-popup v-model='popup_num' position="right" class="reg_psd">
+				法律看到司法考试见附件萨拉放假了设计费
+			</mt-popup>
+		</mt-popup>
 	</div>
 </template>
 <script>
 	import Bus from '../components/Bus.js';
 	import axios from 'axios';
+	import vue from 'vue';
+	import {Toast,Indicator,Popup,Header,Button}	from 'mint-ui';
+	
+	vue.component(Popup.name,Popup);
+	vue.component(Header.name,Header);
+	vue.component(Button.name,Button);
+	
 	export default {
 		data(){
 			return {
@@ -48,11 +66,18 @@
 				register_next_class:{
 					next_active:false,
 					register_next:true
-				}
+				},
+				popupVisible:false,
+				popup_num:false,
+				reg_code:'',
 			}
 		},
 		computed:{
-			
+			reg_phone(){
+				console.log(this.$refs)
+				console.log(this.$refs.reg_user)
+				return this.$refs.reg_num?this.$refs.reg_num.value:'';
+			}
 		},
 		methods:{
 			register_exit(){
@@ -67,7 +92,6 @@
 				}
 			},
 			phone_blur(e){
-				let self=this;
 				if(e.target.value.length===11){
 					this.register_next_class.next_active=true;
 				}else{
@@ -76,29 +100,35 @@
 			},
 			register_next(){
 				if(this.register_next_class.next_active){
+					Indicator.open({
+							text:'注册中...',
+							spinnerType: 'fading-circle'
+						})
+					let timer_tip=setTimeout(()=>{
+						Indicator.close();
+						clearTimeout(timer_tip);
+						this.popupVisible=true;
+					},1500)
 					if(this.$refs.reg_num.value.length!==11){
 						this.showAlert=true;
 						var time_alert=setTimeout(function(){
 							this.showAlert=false;
 						}.bind(this),1000);
 					}
-					let self=this;
-					axios.get('http://datainfo.duapp.com/shopdata/userinfo.php',{
-						params:{
-							userID:self.$refs.reg_num.value,
-							password:self.$refs.reg_psd.value,
-							status:'register',
-							register_dis:self.dis_name,
-							stage:0
-						}
-					}).then(function(data){
-						self.showSuc=true;
-						setTimeout(function(){
-							self.showSuc=false;
-						}.bind(this),1000);
-						self.$router.push({name:'mine'});
-					})
+					let user_info={
+						userID:this.$refs.reg_user.value,
+						phone:this.$refs.reg_num.value,
+						password:'',
+						register_dis:this.dis_name,
+						stage:0
+					}
+					var users_info=this.$store.state.users_info;
+					users_info.push(user_info);
 				}
+			},
+			reg_num_btn(){
+				console.log('content')
+				this.popup_num=true;
 			}
 		},
 		mounted(){

@@ -7,6 +7,7 @@ import store from './store'
 
 import router from '@/router';
 
+
 var vm = new Vue({
 	el:'#app',
 	router,

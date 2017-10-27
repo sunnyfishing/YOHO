@@ -7,7 +7,7 @@ const store = new Vuex.Store({
 		like_pages:1,
 		like_info:[],
 		like_more:true,
-		user_info:[],
+		users_info:['sdf'],
 		login_loading:0
 	},
 	getters:{

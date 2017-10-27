@@ -3,7 +3,7 @@
 		<!--<i class="yo-ico">&#xe61c;</i>-->
 		<div class="mine-tit-up">
 			<div class="mine-tit" :style="opa_val">
-				<i class="iconfont"> &#xe60d;</i>
+				<i class="yo-ico">&#xe660;</i>
 				<span>我的</span>
 				<i class="yo-ico">&#xe61c;</i>
 			</div>
@@ -15,7 +15,7 @@
 			<div class="mine-body">
 				<div class="mine-head">
 					<div class="mine-login">
-						<button @click="loginBtn">登录/注册</button>
+						<button @click="loginBtn">登录 / 注册</button>
 					</div>
 					<div class="mine-items">
 						<ul>
