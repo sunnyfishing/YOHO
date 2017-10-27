@@ -1,9 +1,8 @@
 <template>
 	<div class="maylike">
-		<Til>你可能喜欢</Til>
-		<ul>
+		<ul v-infinite-scroll="loadMore" infinite-scroll-disabled="loading" infinite-scroll-distance="10">
 			<li v-for="val in likeInfo">
-				<img :src="val.default_images.slice(0,-85)"/>
+				<img v-lazy.container="val.default_images.slice(0,-85)"/>
 				<div class="info">
 					<p>{{val.product_name}}</p>
 					<p><span>￥{{val.vip1_price}}.00 </span><del v-if="val.market_price!=val.vip1_price"> ￥{{val.market_price}}.00</del><i @click="showfind($event)">···</i></p>
@@ -14,19 +13,31 @@
 				</div>
 			</li>
 		</ul>
+		<div class="loading" v-if="loading&&!this.$store.getters.load">
+			<img src="../assets/ajax-loader.gif" />
+			<span>加载中……</span>
+		</div>
+		<div class="bottom" v-if="this.$store.getters.load">
+			<img src="../assets/bottom.jpg"/>
+		</div>
 	</div>
 </template>
 
 <script>
-	import Til from './main-title.vue';
 	import {mapGetters} from 'vuex';
+	import Vue from 'vue';
+	import { Lazyload } from 'mint-ui';
+	import { InfiniteScroll } from 'mint-ui';
+	Vue.use(InfiniteScroll);
+	Vue.use(Lazyload);
 	export default{
 		data(){
 			return{
+				loading:false
 			}
 		},
 		components:{
-			Til
+			
 		},
 		computed:{
 			...mapGetters([
@@ -41,17 +52,26 @@
 				}else{
 					e.target.parentElement.parentElement.nextElementSibling.className="find hide"
 				}
+			},
+			loadMore(){
+				this.loading=true
+				setTimeout(function(){
+					this.$store.state.like_more=true
+					this.$store.dispatch('getLike',this.loadover)
+				}.bind(this),1000)
+			},
+			loadover(){
+				this.loading=false
 			}
 		},
 		mounted(){
-			this.$store.dispatch('getLike')
+			this.$store.dispatch('getLike',function(){})
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
 	.maylike{
-		margin-top: 20px;
 		ul{
 			overflow: hidden;
 			li{
@@ -147,6 +167,24 @@
 						opacity: 0;
 					}
 				}
+			}
+		}
+		.loading{
+			height: .4rem;
+			text-align: center;
+			font-size: .12rem;
+			line-height: .4rem;
+			background: #eee;
+			img{
+				height: .15rem;
+			}
+		}
+		.bottom{
+			height: .5rem;
+			text-align: center;
+			background: #f0f0f0;
+			img{
+				height: .5rem;
 			}
 		}
 	}

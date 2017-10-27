@@ -1,7 +1,7 @@
 <template lang="html">
 	<mt-swipe :auto="4000">
 	  	<mt-swipe-item v-for='val in ban'>
-	  		<img :src="val.src.slice(0,-39)" />
+	  		<img v-lazy.container="val.src.slice(0,-39)" />
 	  	</mt-swipe-item>
 	</mt-swipe>
 </template>
@@ -9,6 +9,8 @@
 <script>
 	import Vue from 'vue';
 	import { Swipe, SwipeItem } from 'mint-ui';
+	import { Lazyload } from 'mint-ui';
+	Vue.use(Lazyload);
 	Vue.component(Swipe.name, Swipe);
 	Vue.component(SwipeItem.name, SwipeItem);
 	export default {

@@ -1,9 +1,9 @@
 <template>
-	<div class="list">
+	<div class="main-list">
 		<img :src="img.list[big].data.list[0].src.slice(0,-39)"/>
 		<ul>
 			<li v-for="val in img.list[small].data.list">
-				<img :src="val.default_images.slice(0,-109)" />
+				<img v-lazy.container="val.default_images.slice(0,-109)" />
 				<span>{{val.shop_name}}</span>
 			</li>
 		</ul>
@@ -11,6 +11,9 @@
 </template>
 
 <script>
+	import Vue from 'vue';
+	import { Lazyload } from 'mint-ui';
+	Vue.use(Lazyload);
 	export default{
 		props:{
 			img:{
