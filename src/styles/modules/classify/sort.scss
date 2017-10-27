@@ -1,8 +1,6 @@
 $baseColor:black;
 $fontColor:white;
-html{
-    font-size:100px;
-}
+
 body{
     .section{
         @include flexbox();

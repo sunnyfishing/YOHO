@@ -40,6 +40,7 @@ export default{
 		}
 	},
 	mounted(){
+		//https://123.206.1.98/
 		axios.get('/api/?app_version=6.1.0&channel_id=1&client_secret=2b726a2df4b68873d5dc05bcbc93655d&client_type=android&contentCode=daaa8b1a5103a30419ebd79c06e6feac&fromPage=aFP_Lanuch&gender=1%2C3&method=app.sort.fromBigData&msort=5&os_version=android5.0.2%3Avivo_X5Pro_D&physical_channel=1&screen_size=1080x1920&session_key=532dea836f3f6c586e46069188a02ac5&udid=868299023997975851825611e25178e&uid=52932938&v=7&yh_channel=1')
 		.then(function(response){
 			this.detGoodsList = response.data.data.sortInfo;

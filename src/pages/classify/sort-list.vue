@@ -6,7 +6,7 @@
 			<!--<router-link tag="li" :to="/sort-det" v-for="i in listArr" @clicktodet="clickToDet">
 				{{i.category_name}}
 			</router-link>-->
-			<li v-for="i in listArr" @click="clickToDet(i.category_name)">{{i.category_name}}</li>
+			<li v-for="i in listArr" @click="clickToDet(i.category_name)" {{i.category_name}}</li>
 			<!--这里可以用通过路由传参的方式进行两个组件之间的信息交流。
 				在li循环里面，通过点击事件触发传参函数，给函数传一个标识页码的标识，然后函数将标识传递给另一个组件，该组件通过传过来的标识对url地址进行字符串的拼接
 			-->
@@ -21,11 +21,13 @@
 		data(){
 			return{
 				listArr:[],
+				isActive : false,
 			}
 		},
 		methods:{			//点击路由传参
 			clickToDet(name){
 				this.$router.push({path:'/sort-det',query:{id:123}})
+				this.isActive = true 
 			}
 		},
 		mounted(){
