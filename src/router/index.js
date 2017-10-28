@@ -9,6 +9,7 @@ import Mine from '@/pages/mine.vue';
 import Login from'@/pages/login.vue';
 import Register from '@/pages/register.vue';
 import Register_dis from '@/pages/register_dis.vue';
+import Setting from '@/pages/setting.vue';
 
 import sortDet from '@/pages/classify/sort-det.vue';
 
@@ -61,6 +62,11 @@ export default new Router({
 			path:'/register_dis',
 			component:Register_dis,
 			name:'register_dis'
+		},
+		{
+			path:'/setting',
+			component:Setting,
+			name:'setting'
 		}
 	]
 })

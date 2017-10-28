@@ -11,16 +11,16 @@
 			</div>
 		</div>
 		<div class="login-pan">
-			<div class="alert" v-show="showAlert">
+			<!--<div class="alert" v-show="showAlert">
 				{{alert_dec}}
-			</div>
+			</div>-->
 			<div class="login_suc" v-show="showSuc">
 				<i class="login_suc_img"><img src="../assets/ajax-loader.gif"/></i>
 				<span>登录中...</span>
 			</div>
 			<form method="post">
-				<label><span><i class="yo-ico">y</i></span><input type="text" name="username" class="login-user" value="" v-model="username"/><span><i class="yo-ico"></i></span></label>
-				<label><span><i class="yo-ico"></i></span><input type="password" name="password" class="login-psw" value="" v-model="password"/><span><i class="yo-ico">y</i></span></label>
+				<label><span><i class="yo-ico">&#xe61e;</i></span><input autofocus type="text" name="username" class="login-user" value="" v-model="username"/><span><i class="yo-ico"></i></span></label>
+				<label><span><i class="yo-ico"></i></span><input autofocus :type="password_type" name="password" class="login-psw" value="" v-model="password"/><span><i class="yo-ico" @click="psd_show"><span v-show='pas_show'>&#xe986;</span><span v-show='!pas_show'>&#xe985;</span></i></span></label>
 				<div :class="['login-btn',{login_active:login_active_bool}]" @click="login_next">登录</div>
 			</form>
 			<div class="login-oth">
@@ -33,84 +33,100 @@
 		</div>
 		<div class="login-link">
 			<ul>
-				<li>i</li>
-				<li>i</li>
-				<li>i</li>
-				<li>i</li>
+				<li class='yo-ico'>&#xe602;</li>
+				<li class='yo-ico'>&#xe659;</li>
+				<li class='yo-ico'>&#xe637;</li>
+				<li class='yo-ico'>&#xe601;</li>
 			</ul>
 		</div>
 	</div>
 </template>
 
 <script>
-	
 	import axios from 'axios';
-	
+	import { Indicator, MessageBox } from 'mint-ui';
+	import mineCom from './common/mine-common';
+
 	export default {
-		data(){
+		data() {
 			return {
-				username:'',
-				password:'',
-				alert_dec:'',
-				showAlert:false,
-				login_active_bool:false,
-				showSuc:false
+				username: '',
+				password: '',
+				alert_dec: '',
+				showAlert: false,
+				login_active_bool: false,
+				showSuc: false,
+				pas_show: true,
+				password_type: 'text'
 			}
 		},
-		updated(){
-			if(this.userName!=''){
-				this.login_active_bool=true;
-			}else{
-				this.login_active_bool=false;
+		updated() {
+			if(this.userName != '') {
+				this.login_active_bool = true;
+			} else {
+				this.login_active_bool = false;
 			}
 		},
-		methods:{
-			login_exit(){
-				this.$router.push({name:'mine'});
+		methods: {
+			psd_show() {
+				this.pas_show = this.pas_show ? false : true;
+				if(this.pas_show) {
+					this.password_type = 'password'
+				} else {
+					this.password_type = 'text'
+				}
 			},
-			login_register(){
-				this.$router.push({name:'register'});
+			login_exit() {
+				this.$router.push({
+					name: 'mine'
+				});
 			},
-			login_next(){
-				let self=this;
-				if(this.login_active_bool){
-					axios.get('http://datainfo.duapp.com/shopdata/userinfo.php',{
-						params:{
-							status:'login',
-							userID:self.username,
-							password:self.password
-						}
-					}).then(function(data){
-						if(data.data===0){
-							self.alert_dec='用户名输入错误！';
-							self.showAlert=true;
-							var timer_showAlert=setTimeout(function(){
-								self.showAlert=false;
-								clearTimeout(timer_showAlert);
-							}.bind(self),1000);
-						}else if(data.data===2){
-							self.alert_dec='密码输入错误！';
-							self.showAlert=true;
-							var timer_showAlert=setTimeout(function(){
-								self.showAlert=false;
-								clearTimeout(timer_showAlert);
-							}.bind(self),1000);
-						}else{
-							self.$store.state.login_loading=1;
-							self.showSuc=true;
-							let timer_showSuc=setTimeout(function(){
-								self.showSuc=false;
-								self.$router.push({name:'mine'});
-								clearTimeout(timer_showSuc);
-							},2000)
-						}
+			login_register() {
+				this.$router.push({
+					name: 'register'
+				});
+			},
+			login_next() {
+				let users_info=mineCom.get_userinfo();
+				let index=this.check_username(users_info);
+				this.check_password(users_info,index);
+			},
+			check_username(data) {
+				let exist_user = data.find(item => item.phone === this.username);
+				if(!!exist_user) {
+					return data.indexOf(exist_user);
+				} else {
+					MessageBox.alert('该用户名不存在！', '提示').then(() => {
+						return '';
 					})
+				}
+			},
+			check_password(data,index) {
+				if(index==''||typeof index == 'undefined'){ return '';}
+				if(data[index].password === this.password) {
+					data[index].stage = 1;
+					mineCom.set_userinfo(data);
+					Indicator.open({
+						text: '登录中...',
+						spinnerType: 'fading-circle'
+					});
+					let timer_use = setTimeout(() => {
+						clearTimeout(timer_use);
+						Indicator.close();
+						this.$router.push({
+							name: 'mine'
+						});
+					}, 1500)
+				} else{
+					MessageBox.alert('密码输入错误！', '提示').then(() => {
+							return '';
+						})
+					}
 				}
 			}
 		}
-	}
 </script>
 
 <style lang="scss">
-	
+
 </style>

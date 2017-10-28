@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import axios from 'axios'
+import axios from 'axios';
 Vue.use(Vuex);
 const store = new Vuex.Store({
 	state:{
@@ -9,8 +9,8 @@ const store = new Vuex.Store({
 		like_more:true,
 		user_info:[],
 		login_loading:0,
-		loadtotle:false
-		users_info:['sdf'],
+		loadtotle:false,
+		users_info:[],
 	},
 	getters:{
 		likeInfo:state=>state.like_info,
