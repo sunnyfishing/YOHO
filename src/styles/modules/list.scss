@@ -1,0 +1,78 @@
+#app{
+    .listPage{
+        @include flexbox();
+        @include flex-direction(column);
+        height: 100%;
+        width: 100%;
+        .tit{
+            height: .35rem;
+            width: 100%;
+            background: #323232;
+            color:#fff;
+            @include flexbox();
+            @include align-items(center);
+            @include justify-content(space-between);
+            @include border(0 0 1px 0);
+            i{
+                margin-left: .12rem;
+            }
+            & :nth-child(1){
+                margin-left: .12rem;
+            }
+            & :nth-child(2){
+                margin-right: .12rem;
+            }
+        }
+        .nav{
+            width: 100%;
+            height: .33rem;
+            @include flexbox();
+            @include border(1px 0 1px 0,#979797 #e4e4e4);
+            span{
+                width: .8rem;
+                height: 100%;
+                line-height: .33rem;
+                text-align: center;
+                color:#d2d2d2;
+                &.active{
+                   @include border(0 0 1px 0);
+                   color:#393939;
+                   font-size: 14px; 
+                }
+            }
+        }
+        .style{
+            height: .36rem;
+            @include flexbox();
+            @include border(1px 0 1px 0,#eee);
+            overflow-y: scroll;
+            span{
+                i{
+                   @include flexbox();
+                   color:#b9b9b9;
+                   @include justify-content(center);
+                   width: .76rem;
+                   height: .24rem;
+                   border:.01rem solid #c6c6c6;
+                   border-left:.02rem solid #c6c6c6;
+                   border-right:.02rem solid #c6c6c6;
+                   border-radius:.03rem;
+                   line-height: .2rem;
+                   margin: .03rem;
+                }
+               
+            }
+        }
+        .carLogo{
+            height: .4rem;
+            width: .4rem;
+            border-radius: 50%;
+            background: #EEEEEE;
+            opacity: 0.7;
+            position: fixed;
+            left:15px;
+            bottom:15px;
+            z-index: 100;
+        }
+    }
+}

@@ -9,8 +9,9 @@ import Mine from '@/pages/mine.vue';
 import Login from'@/pages/login.vue';
 import Register from '@/pages/register.vue';
 import Register_dis from '@/pages/register_dis.vue';
-
 import sortDet from '@/pages/classify/sort-det.vue';
+import List from '@/pages/list.vue';
+import GoodsList from '@/pages/list/goodsList.vue';
 
 Vue.use(Router)
 
@@ -27,8 +28,14 @@ export default new Router({
 			{
 				path: '/classify',
 				component: Classify,
+				redirect:{
+					path:'/sort-det',
+					query:{
+						id:'上衣'
+					}
+				},
 				children:[{
-					path: '/classify/sort-det',
+					path: '/sort-det',
 					component: sortDet,					
 				}]
 			},
@@ -61,6 +68,15 @@ export default new Router({
 			path:'/register_dis',
 			component:Register_dis,
 			name:'register_dis'
+		},
+		{
+			path:'/list',
+			component:List,
+			redirect: '/list/goodsList',
+			children:[{
+				path:'/list/goodsList',
+				component:GoodsList
+			}]
 		}
 	]
 })

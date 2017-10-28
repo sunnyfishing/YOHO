@@ -14,11 +14,11 @@
                     text-align: center;
                     width: 100%;
                     color:#b7b8b8;
-                }
-                .Active{
-                    background: #FFFFFF;
-                    border-left: 4px solid #000;
-                    color:#000;
+                    &.listactive{
+                        background: #FFFFFF;
+                        border-left: 4px solid #000;
+                        color:#000;
+                    }
                 }
             }
         }

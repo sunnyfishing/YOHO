@@ -1,4 +1,3 @@
-<!--分类页面，使用100%布局页面-->
 <template lang="html">
 	<div class="list">
 		<div class="nav1">
@@ -23,7 +22,7 @@
 			</div>
 			<!--右侧sort-detail栏-->
 			<div class="sortdet">
-				<sortdet></sortdet>
+				<router-view></router-view>
 			</div>
 		</div>
 	</div>
@@ -31,8 +30,6 @@
 
 <script>
 	import sortlist from "./classify/sort-list.vue" ;
-	import sortdet from "./classify/sort-det.vue";
-	
 	export default {
 	  data() {
 	    return {
@@ -40,11 +37,10 @@
 	    }
 	  },
 	  methods: {
-	
+
 	  },
 	  components: {
-	    sortdet,
-	    sortlist
+	    sortlist,
 	  }
 	}
 </script>

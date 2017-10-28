@@ -1,0 +1,63 @@
+#app{
+    .listPage{
+        .goodsList{
+            @include flex(1);
+            @include flexbox();
+            width: 100%;
+            ul{
+                @include flexbox();
+                @include flex-direction(row);
+                @include flex-wrap(wrap);
+                overflow-y: scroll;            
+                width: 100%;
+                height: 100%;
+                li{
+                    margin:.12rem .08rem;
+                    width: 1.40rem;
+                    & :nth-child(1){
+                        @include flexbox();
+                        height: 1.98rem;
+                        width: 1.46rem;
+                        img[lazy=loading]{
+                            width: 100%;
+                            height: 100%;
+                            margin:auto
+                        }
+                    }
+                    & :nth-child(2){
+                        @include flexbox();
+                        overflow: hidden;
+                        margin: .07rem 0;
+                        height: .27rem;
+                        line-height: .14rem;
+                        font-size: .12rem;
+                    } 
+                    & :nth-child(3){
+                        height: .2rem;
+                        width: 100%;
+                        @include flexbox();
+                        @include justify-content(space-between);
+                        div{
+                            height: .2rem;
+                            width: 100%;
+                            span{
+                                height: 100%; 
+                                margin: 0;
+                                line-height: 100%;
+                            }             
+                            & :first-child{
+                                width: .12rem;                                
+                            }               
+                            i{
+                                @include flexbox();
+                                height: .13rem;
+                                line-height: .13rem;
+                                margin: 0;
+                            }
+                        }
+                    } 
+                }
+            }
+        }
+    }
+}
