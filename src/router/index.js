@@ -10,6 +10,7 @@ import Login from'@/pages/login.vue';
 import Register from '@/pages/register.vue';
 import Register_dis from '@/pages/register_dis.vue';
 import Details from '@/pages/details.vue';
+import Setting from '@/pages/setting.vue';
 import sortDet from '@/pages/classify/sort-det.vue';
 import List from '@/pages/list.vue';
 import GoodsList from '@/pages/list/goodsList.vue';
@@ -72,6 +73,7 @@ export default new Router({
 		},
 		{
 <<<<<<< HEAD
+<<<<<<< HEAD
 			path:'/list',
 			component:List,
 			redirect: '/list/goodsList',
@@ -84,6 +86,11 @@ export default new Router({
 			component:Details,
 			name:'details'
 >>>>>>> teng
+=======
+			path:'/setting',
+			component:Setting,
+			name:'setting'
+>>>>>>> zzz
 		}
 	]
 })

@@ -1,0 +1,118 @@
+
+#setting{
+    width: 100%;
+    height: 100%;
+    letter-spacing: 1px;
+    background: #F5F5F5;
+    .setting_header{
+        background: #444;
+        height: .42rem;
+    }
+    >ul{
+        width: 100%;
+        li{
+            background: white;
+            i{
+                font-size: .26rem;
+            }
+        }
+        li:first-child{
+            margin-bottom: .1rem;
+        }
+        li:last-child{
+            margin-top: .1rem;
+            padding: .08rem;
+            .more_img{
+                padding-top: .1rem;
+                text-align: center;
+            }
+        }
+    }
+}
+
+
+.about_page{
+    width: 100%;
+    height: 100%;
+    @include flexbox();
+    @include flex-direction(column);
+    .about_page_header{
+        height: .42rem;
+        background: #444;
+    }
+    .about_page_body{
+        @include flex();
+        height: 100%;
+        width: 100%;
+        background: #F2F2F2;
+        ul{
+            width: 100%;
+            @include flexbox();
+            @include flex-direction(column);
+            @include align-items(center);
+//          height: 100%;
+            li{
+                @include flexbox();
+                @include flex-direction(column);
+                width: 50%;
+                @include justify-content(center);
+                @include align-items(center);
+                font-size: .14rem;
+                .about-bottons{
+//                  @include flex();
+                    height: 100px!important;
+                    width: 100%;
+                }
+            }
+            .about-botton{
+                 @include flexbox();
+                @include flex-direction(column);
+                  @include justify-content(center);
+                @include align-items(center);
+                @include border(1px 1px 1px 1px ,#444,solid,5px);
+                height: .42rem;
+                margin: .1rem 0;
+                background: white;
+            }
+        }
+    }
+}
+.share_page{
+    width: 100%;
+    height: 100%;
+    @include flexbox();
+    @include flex-direction(column);
+    .share_page_header{
+        height: .42rem;
+        width: 100%;
+        background: #444;
+    }
+    .share_show_page{
+         @include flexbox();
+          @include flex-direction(column);
+          @include flex();
+        width: 100%;
+        height: 100%;
+        .share_show_top{
+            width: 100%;
+            height: 100%;
+            ul{
+                width: 100%;
+                height: 50%;
+                @include flexbox();
+                flex-wrap:wrap!important;
+                li{
+                    @include flex();
+                    width: 100px;
+                    height: 1rem;
+                }
+            }
+        }
+        .share_show_bottom{
+            @include flex();
+            width: 100%;
+            height: 100%;
+            background:#F2F2F2 ;
+        }
+    }
+}
