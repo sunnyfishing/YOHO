@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html style="font-size: 20px;">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=yes">
+    <meta http-equiv="cleartype" content="on">
+    <meta content="telephone=no" name="format-detection" />
+    <script type="text/javascript">
+    (function(d,c){var e=d.documentElement,a="orientationchange" in window?"orientationchange":"resize",b=function(){var f=e.clientWidth;if(!f){return}if(f>=640){e.style.fontSize="40px"}else{e.style.fontSize=40*(f/640)+"px"}};if(!d.addEventListener){return}b();c.addEventListener(a,b,false);d.addEventListener("DOMContentLoaded",b,false)})(document,window);
+</script>
+    <link rel="dns-prefetch" href="//cdn.yoho.cn">
+    <link rel="dns-prefetch" href="//static.yohobuy.com">
+    <link rel="dns-prefetch" href="//img12.static.yhbimg.com">
+    <link rel="dns-prefetch" href="//img13.static.yhbimg.com">
+    <!--
+    <link rel="stylesheet" href="http://cdn.yoho.cn/myohobuy/1.0.7/index.css">
+    -->
+    <link rel="stylesheet" href="https://cdn.yoho.cn/app-webview/1.0.7/index.css">
+
+    <style>
+        .good-detail-page .model {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #e0e0e0;
+            overflow: hidden;
+            margin-bottom: 0.75rem;
+        }
+        .good-detail-page .model .portrait {
+            width: 4.375rem;
+            float: left;
+            margin-bottom: 0.375rem;
+        }
+        .good-detail-page .model .portrait span {
+            text-align: center;
+            font-size: 0.6rem;
+            display: block;
+            height: 1.55rem;
+            line-height: 1.7rem;
+            color: #444;
+        }
+        .good-detail-page .model .portrait img {
+            display: block;
+            max-width: 100%;
+            border: 0;
+            width: 3.1rem;
+            height: 3.1rem;
+            border-radius: 2.75rem;
+            margin-top: 2.1rem;
+            margin-left: 0.55rem;
+        }
+        .good-detail-page .model .info-list {
+            margin-left: 4.75rem;
+        }
+        .good-detail-page .model .info-list .list-title {
+            display: block;
+            width: 6.25rem;
+            height: 1rem;
+            background: #eee;
+            line-height: 1rem;
+            text-align: center;
+            margin: 0.25rem 0 0.75rem;
+        }
+        .good-detail-page .model .detail-info {
+            width: 48%;
+            height: 1.25rem;
+            line-height: 1.25rem;
+            display: inline-block;
+        }
+        .good-detail-page .model .detail-info .info-name {
+            color: #b0b0b0;
+            font-size: 0.6rem;
+        }
+        .good-detail-page .model .detail-info:nth-child(2) {
+            width: 100%;
+        }
+        .good-detail-page .remind-tips {
+            padding-left: 0.45rem;
+            font-size: 0.55rem;
+            color: #e9221a;
+            margin-bottom: 0.75rem;
+        }
+        .good-detail-page .remind-tips img {
+            width: 0.7rem;
+            float: left;
+        }
+        .good-detail-page .remind-tips .wash-tags {
+            line-height: 0.75rem;
+            height: 0.75rem;
+            height: 0.75rem;
+            margin-left: 0.25rem;
+        }
+        .good-detail-page .goods-desc .service.surpass-not-support {
+            background: url("http://img11.static.yhbimg.com/article/2017/07/19/14/016ec56db99be8633d5e9b1aa66b6ffab1.png") no-repeat;
+            background-size: 100%;
+        }
+        .good-detail-page .page-block .pro-detail * {
+            font-size: 0.7rem !important;
+            color: #444;
+            line-height: 1rem !important;
+            margin-bottom: 1rem;
+            letter-spacing: 0.03rem;
+            word-break: break-all;
+        }
+        .good-detail-page .maybe-like {
+            border-top: none;
+            padding-left: 0;
+        }
+        .good-detail-page .maybe-like .title{
+            color: #444;
+            font-size: 0.8rem;
+            line-height: 2.2rem;
+            text-align: center;
+            margin-left: -0.375rem;
+        }
+        .good-detail-page .recommend-for-you .title {
+            margin-left: -0.375rem;
+        }
+        .good-detail-page .page-block .pro-detail {
+            font-size: 14px;
+        }
+        .good-detail-page .goods-discount {
+            padding-top: 0;
+            margin-bottom: 0.5rem;
+        }
+        .good-detail-page .product-detail {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+        .good-detail-page .page-block {
+            margin-bottom: 0.5rem;
+        }
+        strong,b {
+            font-weight: bold;
+        }
+
+    </style>
+
+    <link rel="apple-touch-icon-precomposed" href="http://static.yohobuy.com/m/v1/img/touch/apple-touch-icon-144x144-precomposed-new.png">
+    <link rel="apple-touch-startup-image" sizes="640x920" href="http://static.yohobuy.com/m/v1/img/startup/startup-retina.png" media="screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)">
+    <link rel="apple-touch-startup-image" sizes="320x460" href="http://static.yohobuy.com/m/v1/img/startup/startup.png" media="screen and (max-device-width: 320)">
+    <!--<link rel="stylesheet" href="../static_app/index.css">
+    <link rel="stylesheet" href="../static_app/swiper.css">-->
+</head>
+<body>
+
+<div class="good-detail-page yoho-page">
+    <div id="app-detail" class="hide">
+        <div id="productDesc">
+            
+            <div class="goods-desc  page-block">
+                
+                <h1 class="title">
+                    商品信息
+                    <span class="en-title">PRODUCT INFO</span>
+                </h1>
+                
+                <div class="detail table">
+                    
+                    <div class="column">编号：51656964</div>
+                    
+                    <div class="column">颜色：黑</div>
+                    
+                    <div class="column">性别：男款</div>
+                    
+                    <div class="column">领型：圆领</div>
+                    
+                    <div class="column">衣长：适中</div>
+                    
+                    <div class="column">袖长：长袖</div>
+                    
+                    <div class="column">版型：正常</div>
+                    
+                    <div class="column">厚度：中</div>
+                    
+                    <div class="column">经典款型：圆领套头卫衣</div>
+                    
+                </div>
+                
+                
+                <div class="desc-text">这款图案印花卫衣，帅气的人像图案印花，袖上特别的字母印花，经典的版型，面料透气舒适，由整齐车线缝制而成的底边，走线均匀细密，彰显良好工艺品质。</div>
+                
+            </div>
+
+            
+
+            
+            <div class="size-info  page-block">
+                <h1 class="title">
+                    尺码信息
+                    <span class="en-title">SIZE INFO</span>
+                </h1>
+                
+                <div class="detail">
+                    <div class="swiper-container detail-swiper" id="size-swiper-container">
+                        <div class="swiper-wrapper">
+                            
+                            <div class="swiper-slide " >
+                                
+                                <div class="cell">吊牌尺码</div>
+                                
+                                <div class="cell">S</div>
+                                
+                                <div class="cell">M</div>
+                                
+                                <div class="cell">L</div>
+                                
+                                <div class="cell">XL</div>
+                                
+                            </div>
+                            
+                            <div class="swiper-slide " >
+                                
+                                <div class="cell">参考尺码</div>
+                                
+                                <div class="cell">165/80A</div>
+                                
+                                <div class="cell">170/84A</div>
+                                
+                                <div class="cell">175/88A</div>
+                                
+                                <div class="cell">180/92A</div>
+                                
+                            </div>
+                            
+                            <div class="swiper-slide " >
+                                
+                                <div class="cell">肩宽</div>
+                                
+                                <div class="cell">43</div>
+                                
+                                <div class="cell">45</div>
+                                
+                                <div class="cell">47</div>
+                                
+                                <div class="cell">48</div>
+                                
+                            </div>
+                            
+                            <div class="swiper-slide " >
+                                
+                                <div class="cell">胸围</div>
+                                
+                                <div class="cell">108</div>
+                                
+                                <div class="cell">112</div>
+                                
+                                <div class="cell">116</div>
+                                
+                                <div class="cell">120</div>
+                                
+                            </div>
+                            
+                            <div class="swiper-slide " >
+                                
+                                <div class="cell">袖长</div>
+                                
+                                <div class="cell">64</div>
+                                
+                                <div class="cell">65</div>
+                                
+                                <div class="cell">66</div>
+                                
+                                <div class="cell">66</div>
+                                
+                            </div>
+                            
+                            <div class="swiper-slide " >
+                                
+                                <div class="cell">前衣长</div>
+                                
+                                <div class="cell">68</div>
+                                
+                                <div class="cell">70</div>
+                                
+                                <div class="cell">72</div>
+                                
+                                <div class="cell">74</div>
+                                
+                            </div>
+                            
+                            <div class="swiper-slide " >
+                                
+                                <div class="cell">后衣长</div>
+                                
+                                <div class="cell">68</div>
+                                
+                                <div class="cell">70</div>
+                                
+                                <div class="cell">72</div>
+                                
+                                <div class="cell">74</div>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <p class="tips">提示：左滑查看完整表格信息</p>
+                </div>
+                
+            </div>
+            
+
+            
+            <div class="measurement-method  page-block">
+                <h1 class="title">
+                    测量方式
+                    <span class="en-title">MEASUREMENT METHOD</span>
+                </h1>
+                <div class="detail" style="width:100%">
+                    <img class="img" src="http://static.yohobuy.com/images/1.jpg" alt="">
+                </div>
+            </div>
+            
+
+            
+
+            
+            <div class="materials  page-block">
+                <h1 class="title">
+                    商品材质
+                    <span class="en-title">MATERIALS</span>
+                </h1>
+                <div class="detail">
+                    
+                    <div class="material-item">
+                        <!-- <img class="img" src="http://img10.static.yhbimg.com/material/2012/03/06/20/0176f9410824167f9eca0cea7bd2b3df70.jpg?imageView2/2/w/60/h/120" alt="">
+                         <p class="material-desc">
+                             涤纶类的服装可机洗，可手洗，可干洗，可用毛刷刷洗。不可曝晒，不宜烘干。熨烫温度不能超过110度，熨烫时一定要打蒸汽，不能干烫 。在日光下晾晒时，将里面朝外。
+                         </p>-->
+                        <div class="material-image">
+                            <img src="http://img10.static.yhbimg.com/material/2012/03/06/20/0176f9410824167f9eca0cea7bd2b3df70.jpg?imageView2/2/w/60/h/120" alt="材质图">
+                        </div>
+                        <div class="material-desc">
+                            涤纶类的服装可机洗，可手洗，可干洗，可用毛刷刷洗。不可曝晒，不宜烘干。熨烫温度不能超过110度，熨烫时一定要打蒸汽，不能干烫 。在日光下晾晒时，将里面朝外。
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+
+            
+            <div class="wash-tips page-block">
+                <div class="detail table clearfix">
+                    
+                </div>
+                
+                <div class="remind-tips">
+                    <img src="http://img11.static.yhbimg.com/goodsimg/2017/03/20/16/01121126e60e931144269e9b0053f8b5ff.png">
+                    <span class="wash-tags">温馨提示：因产品工艺不同，洗涤方式请以吊牌信息为准</span>
+                </div>
+                
+            </div>
+            
+
+            
+            <div class="product-detail page-block">
+                <h1 class="title">
+                    商品详情
+                    <span class="en-title">DETAILS</span>
+                </h1>
+                <div class="pro-detail">
+                    
+                    <p><style>video{width:100%;height:auto;}</style><p><img src="http://img10.static.yhbimg.com/goodsimg/2017/09/05/14/015130f9f20a883f82b62f59dd2d970df0.jpg?imageMogr2/thumbnail/750x/quality/80/interlace/1" _src="http://img10.static.yhbimg.com/goodsimg/2017/09/05/14/015130f9f20a883f82b62f59dd2d970df0.jpg?imageMogr2/thumbnail/750x/quality/80/interlace/1" style=""/><p><img src="http://img10.static.yhbimg.com/goodsimg/2017/09/05/14/01e7ecc17d9dc1fde937f3006d1a02d86a.jpg?imageMogr2/thumbnail/750x/quality/80/interlace/1" _src="http://img10.static.yhbimg.com/goodsimg/2017/09/05/14/01e7ecc17d9dc1fde937f3006d1a02d86a.jpg?imageMogr2/thumbnail/750x/quality/80/interlace/1" style=""/><p><img src="http://img12.static.yhbimg.com/goodsimg/2017/09/05/14/022227f4fe2f80a5ec640f62373f4d8bf5.jpg?imageMogr2/thumbnail/750x/quality/80/interlace/1" _src="http://img12.static.yhbimg.com/goodsimg/2017/09/05/14/022227f4fe2f80a5ec640f62373f4d8bf5.jpg?imageMogr2/thumbnail/750x/quality/80/interlace/1" style=""/><p><img src="http://img11.static.yhbimg.com/goodsimg/2017/09/05/14/01bc3942be685d6d2e4678a20e576b903a.jpg?imageMogr2/thumbnail/750x/quality/80/interlace/1" _src="http://img11.static.yhbimg.com/goodsimg/2017/09/05/14/01bc3942be685d6d2e4678a20e576b903a.jpg?imageMogr2/thumbnail/750x/quality/80/interlace/1" style=""/><p><img src="http://img10.static.yhbimg.com/goodsimg/2017/09/05/14/014478b8601106e94e15a1ab3f81168f57.jpg?imageMogr2/thumbnail/750x/quality/80/interlace/1" _src="http://img10.static.yhbimg.com/goodsimg/2017/09/05/14/014478b8601106e94e15a1ab3f81168f57.jpg?imageMogr2/thumbnail/750x/quality/80/interlace/1" style=""/><p><img src="http://img11.static.yhbimg.com/goodsimg/2017/09/05/14/018cac21c8120aa657485a886fc60cdaac.jpg?imageMogr2/thumbnail/750x/quality/80/interlace/1" _src="http://img11.static.yhbimg.com/goodsimg/2017/09/05/14/018cac21c8120aa657485a886fc60cdaac.jpg?imageMogr2/thumbnail/750x/quality/80/interlace/1" style=""/><p><img src="http://img12.static.yhbimg.com/goodsimg/2017/09/05/14/0232e69b8660a0aceb0e6387523827a707.jpg?imageMogr2/thumbnail/750x/quality/80/interlace/1" _src="http://img12.static.yhbimg.com/goodsimg/2017/09/05/14/0232e69b8660a0aceb0e6387523827a707.jpg?imageMogr2/thumbnail/750x/quality/80/interlace/1" style=""/><p><img src="http://img13.static.yhbimg.com/goodsimg/2017/09/05/14/0251df97f753586ebe22abbca50daba6c4.jpg?imageMogr2/thumbnail/750x/quality/80/interlace/1" _src="http://img13.static.yhbimg.com/goodsimg/2017/09/05/14/0251df97f753586ebe22abbca50daba6c4.jpg?imageMogr2/thumbnail/750x/quality/80/interlace/1" style=""/><p><img src="http://img11.static.yhbimg.com/goodsimg/2017/09/05/14/0143eee6558f40101e0e51675cb80f3e41.jpg?imageMogr2/thumbnail/750x/quality/80/interlace/1" _src="http://img11.static.yhbimg.com/goodsimg/2017/09/05/14/0143eee6558f40101e0e51675cb80f3e41.jpg?imageMogr2/thumbnail/750x/quality/80/interlace/1" style=""/><p>
+</p>
+                    
+                </div>
+            </div>
+            
+        </div>
+        <div class="recommend-for-you hide" style="padding-top: 0">
+        </div>
+        <div class="maybe-like hide" id="maybe-like" style="padding-top: 0">
+        </div>
+        
+        <input id="preferenceUrl" type="hidden" value="https://api.yoho.cn/?method=app.product.preference&brandId=562&limit=30&product_skn=51656964&shopId=2206&yh_channel=1">
+        
+        
+        <input id="shopPreferenceUrl" type="hidden" value="https://api.yoho.cn/?method=app.product.shopPreference&brandId=562&limit=30&product_skn=51656964&shopId=2206&yh_channel=1">
+        
+</div>
+<script src="https://cdn.yoho.cn/app-webview/1.0.7/lib.js"></script>
+<script src="https://cdn.yoho.cn/app-webview/1.0.7/index.js"></script>
+<script>
+    seajs.use('js/product/detail/detail-app');
+</script>
+        <script type="text/javascript">
+
+            function mayAjax() {
+
+                //先声明一个异步请求对象
+                var xmlHttpReg = null;
+                if (window.ActiveXObject) {
+
+                    xmlHttpReg = new ActiveXObject("Microsoft.XMLHTTP");
+
+                } else if (window.XMLHttpRequest) {
+
+                    xmlHttpReg = new XMLHttpRequest();
+                }
+
+                // 调用open()方法发送请求
+                if (xmlHttpReg != null) {
+                    xmlHttpReg.open("get", document.getElementById("shopPreferenceUrl").value, true);
+                    xmlHttpReg.send(null);
+                    xmlHttpReg.onreadystatechange = doResult; //设置回调函数
+                }
+
+                //设定函数doResult()
+                function doResult() {
+                    if (xmlHttpReg.readyState == 4) {
+
+                        if (xmlHttpReg.status == 200 && xmlHttpReg.responseText !== "") {
+
+                            document.getElementById("maybe-like").classList.remove("hide");
+                            document.getElementById("maybe-like").innerHTML = xmlHttpReg.responseText;
+                        }
+                    }
+                }
+            }
+
+            if (document.getElementById("shopPreferenceUrl")) {
+                mayAjax();
+            }
+
+        </script>
+
+    <script type="text/javascript">
+        (function(w, d, s, j, f) {
+            var a = d.createElement(s);
+            var m = d.getElementsByTagName(s)[0];
+
+            w.YohoAcquisitionObject = f;
+
+            w[f] = function() {
+                w[f].p = arguments;
+            };
+
+            a.async = 1;
+            a.src = j;
+            m.parentNode.insertBefore(a, m);
+        }(window, document, 'script', (document.location.protocol === 'https:' ? 'https:' : 'http:') + '//cdn.yoho.cn/yas-jssdk/2.0.0/yas.js', '_yas'));
+
+        (function() {
+            var qs = {};
+            var hashes = window.location.search.slice(1).split('&');
+            for (var i = 0; i < hashes.length; i++) {
+                var hash = hashes[i].split('=');
+                qs[hash[0]] = hash[1];
+            }
+            var uid = '';
+            window._ozuid = uid; // 暴露ozuid
+            if (window._yas) {
+                window._yas(1 * new Date(), '2.0.0', 'yohobuy_m', uid, '', '');
+            }
+
+            // 店铺推荐点击商品 埋点
+            var C_ID = qs.yh_channel || 1;
+            var RECID = (new Date().getTime() + '_H5_YOHOBUY_' + Math.floor(Math.random() * 1000000 + 1000000) + '_' + Math.floor(Math.random() * 1000000 + 1000000));
+
+            var goodDom = document.getElementsByClassName("good-info");
+
+            window.onload = function(){
+                for(var i = 0; i < goodDom.length; i++) {
+                    goodDom[i].addEventListener('click', function(e) {
+                        if (!window._yas || !window._yas.sendAppLogs) {
+                            return;
+                        }
+
+                        var PRD_ID = e.currentTarget.getAttribute('data-good-id');
+                        var PRD_NUM = e.currentTarget.getAttribute('data-good-index');
+                        var MAIN_SKN = e.currentTarget.getAttribute('data-id');
+                        var parentNodeID = e.currentTarget.parentNode.parentNode.id;
+
+                        if (parentNodeID === ("shop-goods-container")) {
+                            window._yas.sendAppLogs({
+                                appop: 'YB_CHOOSE_FOR_YOU',
+                                param: JSON.stringify({
+                                    REC_POSE: 100013,
+                                    REC_ID: RECID,
+                                    PRD_ID: PRD_ID,
+                                    PRD_NUM: PRD_NUM,
+                                    C_ID: C_ID,
+                                    ACTION_ID: 1
+                                })
+                            }, true);
+                        }
+
+                        if (parentNodeID === ("like-goods-container")) {
+                            window._yas.sendAppLogs({
+                                appop: 'YB_CHOOSE_FOR_YOU',
+                                param: JSON.stringify({
+                                    REC_POSE: 100024,
+                                    REC_ID: RECID,
+                                    PRD_ID: PRD_ID,
+                                    PRD_NUM: PRD_NUM,
+                                    C_ID: C_ID,
+                                    ACTION_ID: 1,
+                                    MAIN_SKN: MAIN_SKN
+                                })
+                            }, true);
+                        }
+                    }, false);
+                }
+            };
+
+            // 店铺推荐展示 埋点
+            setTimeout(function(){
+                // 店铺推荐展示 埋点
+                if (window._yas && typeof window._yas.sendAppLogs === 'function') {
+
+                    var shopIds = document.getElementById('shop-goods-ids') ? document.getElementById('shop-goods-ids').getAttribute('value') : '';
+                    var likeIds = document.getElementById('like-goods-ids') ? document.getElementById('like-goods-ids').getAttribute('value') : '';
+                    var skn = document.getElementById('like-goods-skns') ? document.getElementById('like-goods-skns').getAttribute('value') : '';
+
+                    if (document.getElementById("shop-goods-container")) {
+                        window._yas.sendAppLogs({
+                            appop: 'YB_CHOOSE_FOR_YOU',
+                            param: JSON.stringify({
+                                REC_POSE: 100013,
+                                REC_ID: RECID,
+                                PRD_ID: shopIds,
+                                PRD_NUM: shopIds.split(',').length,
+                                C_ID: C_ID,
+                                ACTION_ID: 0
+                            })
+                        }, true);
+                    }
+
+                    if (document.getElementById("like-goods-container")) {
+                        window._yas.sendAppLogs({
+                            appop: 'YB_CHOOSE_FOR_YOU',
+                            param: JSON.stringify({
+                                REC_POSE: 100024,
+                                REC_ID: RECID,
+                                PRD_ID: likeIds,
+                                PRD_NUM: likeIds.split(',').length,
+                                C_ID: C_ID,
+                                ACTION_ID: 0,
+                                MAIN_SKN: skn
+                            })
+                        }, true);
+                    }
+                }
+            }, 2000);
+        }());
+    </script>
+</body>
+</html>

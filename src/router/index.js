@@ -9,6 +9,7 @@ import Mine from '@/pages/mine.vue';
 import Login from'@/pages/login.vue';
 import Register from '@/pages/register.vue';
 import Register_dis from '@/pages/register_dis.vue';
+import Details from '@/pages/details.vue';
 import sortDet from '@/pages/classify/sort-det.vue';
 import List from '@/pages/list.vue';
 import GoodsList from '@/pages/list/goodsList.vue';
@@ -70,6 +71,7 @@ export default new Router({
 			name:'register_dis'
 		},
 		{
+<<<<<<< HEAD
 			path:'/list',
 			component:List,
 			redirect: '/list/goodsList',
@@ -77,6 +79,11 @@ export default new Router({
 				path:'/list/goodsList',
 				component:GoodsList
 			}]
+=======
+			path:'/details',
+			component:Details,
+			name:'details'
+>>>>>>> teng
 		}
 	]
 })
