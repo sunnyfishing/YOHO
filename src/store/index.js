@@ -9,7 +9,7 @@ const store = new Vuex.Store({
 		like_more:true,
 		user_info:[],
 		login_loading:0,
-		loadtotle:false
+		loadtotle:false,
 		users_info:['sdf'],
 	},
 	getters:{

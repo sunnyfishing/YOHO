@@ -4,6 +4,12 @@ $base_color:#414141;
     width: 100%;
     background: white;
 }
+.mint-popup{
+    width: 80%;
+    height: 100%;
+    background: transparent;
+    box-shadow: 10px 0 20px 5px rgba(0,0,0,.6);
+}
 @font-face {
   font-family: 'yofont';
   src: url('../assets/iconfont/iconfont.woff') format('woff'), 
@@ -14,15 +20,18 @@ font-family: 'yofont';
 src: url('../assets/iconfont/iconfont1.woff') format('woff'), 
        url('../assets/iconfont/iconfont1.ttf') format('truetype'),
 }
-//@font-face {
-//font-family: 'yofont';
-//src: url('../assets/iconfont/iconfont2.woff') format ('woff'),
-//     url('../assets/iconfont/iconfont2.ttf') format ('truetype'),
-//}
 @font-face {
-    font-family: 'yofont';
-    src: url('../assets/iconfontmine/iconfont.woff') format ('woff'),
+font-family: 'yofont';
+src: url('../assets/iconfontmine/iconfont.woff') format ('woff'),
        url('../assets/iconfontmine/iconfont.ttf') format ('truetype'),
 }
-
-
+@font-face {
+font-family: 'yofont';
+src: url('../assets/iconfont/iconfont3.woff') format('woff'), 
+       url('../assets/iconfont/iconfont3.ttf') format('truetype'),
+}
+@font-face {
+font-family: 'yofont';
+src: url('../assets/iconfont/iconfontdetails.woff') format('woff'), 
+       url('../assets/iconfont/iconfontdetails.ttf') format('truetype'),
+}
