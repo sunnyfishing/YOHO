@@ -27,9 +27,10 @@
                                 margin:0 .07rem .07rem 0;
                                 @include flexbox();
                                 @include flex-direction(column);
+                                @include align-items(center);
                                 img{
                                     height: .6rem;
-                                    width: 100%;
+                                    width: .45rem;
                                 }
                                 span{
                                     @include flex(1);

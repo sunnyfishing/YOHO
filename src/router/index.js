@@ -27,10 +27,10 @@ export default new Router({
 			{
 				path: '/classify',
 				component: Classify,
-			},
-			{
-				path: '/sort-det',
-				component: sortDet,
+				children:[{
+					path: '/classify/sort-det',
+					component: sortDet,					
+				}]
 			},
 			{
 				path: '/stroll',
