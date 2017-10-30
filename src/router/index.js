@@ -26,6 +26,7 @@ export default new Router({
 		children: [{
 				path: '/main',
 				component: Main,
+				name:'main',
 			},
 			{
 				path: '/classify',
