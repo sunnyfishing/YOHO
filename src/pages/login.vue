@@ -1,5 +1,8 @@
 <template>
 	<div id="login">
+		<mt-popup v-model='popvisible' position='top' class="registerLoad">
+			登录成功!
+		</mt-popup>
 		<div class="login-header">
 			<div class="login-head">
 				<div class="login-exit" @click="login_exit">
@@ -57,7 +60,8 @@
 				login_active_bool: false,
 				showSuc: false,
 				pas_show: true,
-				password_type: 'text'
+				password_type: 'text',
+				popvisible:false
 			}
 		},
 		updated() {
@@ -68,6 +72,17 @@
 			}
 		},
 		methods: {
+			registerLoad(){
+				console.log(this.$store.state.register_stage)
+				if(this.$store.state.register_stage){
+					this.popvisible=true;
+					let timer_load=setTimeout(()=>{
+						this.$store.commit('set_register_stage',0);
+						clearTimeout(timer_load);
+						this.popvisible=false;
+					},1000)
+				}
+			},
 			psd_show() {
 				this.pas_show = this.pas_show ? false : true;
 				if(this.pas_show) {
@@ -90,16 +105,25 @@
 				let users_info=mineCom.get_userinfo();
 				let index=this.check_username(users_info);
 				this.check_password(users_info,index);
+				this.$store.commit('set_login_stage',1);
+				this.$store.commit('set_login_first',1);
 			},
 			check_username(data) {
-				let exist_user = data.find(item => item.phone === this.username);
-				if(!!exist_user) {
-					return data.indexOf(exist_user);
-				} else {
+				if(!!data){
+					let exist_user = data.find(item => item.phone === this.username);
+					if(!!exist_user) {
+						return data.indexOf(exist_user);
+					} else {
+						MessageBox.alert('该用户名不存在！', '提示').then(() => {
+							return '';
+						})
+					}
+				}else{
 					MessageBox.alert('该用户名不存在！', '提示').then(() => {
 						return '';
 					})
 				}
+				
 			},
 			check_password(data,index) {
 				if(index==''||typeof index == 'undefined'){ return '';}
@@ -123,6 +147,9 @@
 						})
 					}
 				}
+			},
+			mounted(){
+				this.registerLoad();
 			}
 		}
 </script>

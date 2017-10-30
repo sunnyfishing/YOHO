@@ -20,7 +20,7 @@ export default new Router({
 	routes: [{
 		path: '/',
 		component: Frame,
-		redirect: '/main',
+		redirect: '/mine',
 		children: [{
 				path: '/main',
 				component: Main,

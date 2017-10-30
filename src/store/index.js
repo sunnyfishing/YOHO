@@ -11,6 +11,10 @@ const store = new Vuex.Store({
 		login_loading:0,
 		loadtotle:false,
 		users_info:[],
+		register_stage:0,
+		login_stage:0,
+		login_first:0,
+		loginning_stage:0
 	},
 	getters:{
 		likeInfo:state=>state.like_info,
@@ -24,6 +28,18 @@ const store = new Vuex.Store({
 		},
 		loadtotle(state){
 			state.loadtotle=true
+		},
+		set_register_stage(state,stage){
+			state.register_stage=stage;
+		},
+		set_login_stage(state,stage){
+			state.login_stage=stage;
+		},
+		set_login_first(state,stage){
+			state.login_first=stage;
+		},
+		set_loginning_stage(state,stage){
+			state.loginning_stage=stage;
 		}
 	},
 	actions:{
