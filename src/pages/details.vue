@@ -95,6 +95,23 @@
 			</div>
 		</div>
 		<div class="details_footer">
+			<ul>
+				<li>
+					<i class="yo-ico">&#xe68c;</i>
+					<span>购物车</span>
+				</li>
+				<li>
+					<i class="yo-ico">&#xe64c;</i>
+					<span>品牌店铺</span>
+				</li>
+				<li>
+					<i class="yo-ico">&#xe72d;</i>
+					<span>收藏</span>
+				</li>
+				<li>
+					<p>加入购物车</p>
+				</li>
+			</ul>
 		</div>
 	</div>
 </template>
