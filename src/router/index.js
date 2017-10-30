@@ -72,8 +72,6 @@ export default new Router({
 			name:'register_dis'
 		},
 		{
-<<<<<<< HEAD
-<<<<<<< HEAD
 			path:'/list',
 			component:List,
 			redirect: '/list/goodsList',
@@ -81,16 +79,16 @@ export default new Router({
 				path:'/list/goodsList',
 				component:GoodsList
 			}]
-=======
+		},
+		{
 			path:'/details',
 			component:Details,
 			name:'details'
->>>>>>> teng
-=======
+		},
+		{
 			path:'/setting',
 			component:Setting,
 			name:'setting'
->>>>>>> zzz
 		}
 	]
 })

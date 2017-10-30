@@ -2,7 +2,9 @@
 	<div class="listPage">
 		<div class="tit">
 			<div>
-				<i></i>
+				<router-link tag="i" :to="path:'/sort-det'">
+					Back
+				</router-link>
 				<span>{{this.$route.query.id}}</span>
 			</div>
 			<span>筛选</span>

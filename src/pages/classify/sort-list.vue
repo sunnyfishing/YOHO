@@ -1,9 +1,9 @@
 <!--通过现有接口获得数据    待做-->
 <template lang="html">
 	<div>
-		<ul>
+		<ul @click="doClick($event)">
 			<!--路由传参的方法-->
-			<router-link v-for="i in listArr" tag="li" :to="{path:'/sort-det',query:{id:i.category_name}}" active-class="listactive">
+			<router-link v-for="i in listArr" tag="li" :to="{path:'/sort-det',query:{id:i.category_name}}" active-class="{listactive | isActive}">
 				{{i.category_name}}
 			</router-link>
 			
@@ -27,10 +27,9 @@
 			}
 		},
 		methods:{			//点击路由传参,选项高亮
-			//clickToDet(name){
-				//this.$router.push({path:'/classify/sort-det',query:{id:name}})
-				//this.isActive = true
-			//}
+			doClick(e){
+				e.target.isActive = true
+			}
 		},
 		mounted(){
 			axios.get('/api/?app_version=6.1.0&client_secret=0f062603bf5ff527e68cf961013a445b&client_type=android&fromPage=aFP_Lanuch&gender=&method=app.sort.get&os_version=android5.0.2%3Avivo_X5Pro_D&physical_channel=1&screen_size=1080x1920&session_key=532dea836f3f6c586e46069188a02ac5&udid=868299023997975851825611e25178e&uid=52932938&v=7&yh_channel=1')
