@@ -12,6 +12,7 @@ const store = new Vuex.Store({
 		loadtotle:false,
 		users_info:['sdf'],
 		users_info:[],
+		a:1,
 	},
 	getters:{
 		likeInfo:state=>state.like_info,
