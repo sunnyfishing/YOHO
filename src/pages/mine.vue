@@ -215,6 +215,7 @@
 					this.popvisible=true;
 					let timer_load=setTimeout(()=>{
 						this.$store.commit('set_login_first',0);
+						this.$store.commit('set_loginning_stage',0);
 						clearTimeout(timer_load);
 						this.login_tit="登录成功！";
 						this.popvisible=false;
