@@ -1,7 +1,7 @@
 <template>
 	<div class="goodsList" id="container">
 		<ul>
-			<router-link tag="li" v-for="i in goodsArr" to="/">
+			<router-link tag="li" v-for="i in goodsArr" to="/" @click="sendProduct_id(i.product_id,i.product_skn)" >
 				<i>
 					<img v-lazy.container="i.default_images"/>
 				</i>
@@ -24,6 +24,8 @@ import axios from 'axios';
 import { Lazyload } from 'mint-ui';
 import Vue from 'vue';
 import { Indicator } from 'mint-ui';
+import {store} from '../../store/index.js'
+import { mapState } from 'vuex'
 Vue.use(Lazyload);
 
 export default{
@@ -47,6 +49,11 @@ export default{
 	},
 	props:[
 		'sendType',
-	]
+	],
+	methods:{
+		sendProduct_id(product_id,product_skn){
+			store.commit('sendProduct_id', product_id,product_skn)
+		}
+	}
 }
 </script>

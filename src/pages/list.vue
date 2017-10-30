@@ -2,7 +2,7 @@
 	<div class="listPage">
 		<div class="tit">
 			<div>
-				<router-link tag="i" :to="path:'/sort-det'">
+				<router-link tag="i" to="/sort-det">
 					Back
 				</router-link>
 				<span>{{this.$route.query.id}}</span>
@@ -22,13 +22,13 @@
 			</span>
 		</div>
 		<div class="style">
-			<span><i>经典款型</i></span>
-			<span><i>厚度</i></span>
-			<span><i>领型</i></span>
-			<span><i>袖长</i></span>
-			<span><i>原产地</i></span>
-			<span><i>衣长</i></span>
-			<span><i>版型</i></span>
+			<span @click="clickToHigh" class="active"><i>经典款型</i></span>
+			<span @click="clickToHigh"><i>厚度</i></span>
+			<span @click="clickToHigh"><i>领型</i></span>
+			<span @click="clickToHigh"><i>袖长</i></span>
+			<span @click="clickToHigh"><i>原产地</i></span>
+			<span @click="clickToHigh"><i>衣长</i></span>
+			<span @click="clickToHigh"><i>版型</i></span>
 		</div>
 		<goodsList :sendType="this.$route.query.id">
 			
@@ -36,6 +36,9 @@
 		<div class="carLogo">
 			
 		</div>
+		<router-link tag='li' to="/shopcat" class="carLogo">
+			<i class="yo-ico">&#xe68c;</i>
+		</router-link>
 	</div>
 </template>
 
@@ -44,6 +47,15 @@
 	export default{
 		components:{
 			goodsList
+		},
+		methods:{
+			clickToHigh(event){
+				var le = event.target.parentElement.parentElement.children;
+				for (var i=0; i<le.length; i++){
+					le[i].className = "";
+				}
+				event.target.parentElement.className = "active";
+			}
 		}
 	}
 </script>

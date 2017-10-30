@@ -15,7 +15,9 @@ const store = new Vuex.Store({
 		register_stage:0,
 		login_stage:0,
 		login_first:0,
-		loginning_stage:0
+		loginning_stage:0,
+		product_id:0,
+		product_skn:0
 	},
 	getters:{
 		likeInfo:state=>state.like_info,
@@ -41,6 +43,10 @@ const store = new Vuex.Store({
 		},
 		set_loginning_stage(state,stage){
 			state.loginning_stage=stage;
+		},
+		sendProduct_id(state,stage1,stage2){
+			state.product_id = stage1;
+			state.product_skn = stage2;	
 		}
 	},
 	actions:{
