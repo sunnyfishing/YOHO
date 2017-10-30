@@ -41,6 +41,9 @@
 					<img src="../assets/mine-img/and.png"/>
 				</div>
 			</li>
+			<li class='user_exit_li' v-if="exitLoginBtn">
+				<button class='user_exit' @click="user_exit_event">退出登录</button>
+			</li>
 		</ul>
 		<mt-popup v-model="about_show" class='about_page' position="right">
 			<mt-header class="about_page_header">
@@ -64,10 +67,10 @@
 				</ul>
 			</div>
 		</mt-popup>
-		<mt-popup v-model="share_show" class="share_page">
+		<mt-popup v-model="share_show" class="share_page" position="right">
 			<mt-header class="share_page_header">
 				<router-link to="/setting" slot="left">
-			    <div class="about_exit_event" @click="about_page_exit">
+			    <div class="about_exit_event" @click="share_page_exit">
 			    	<mt-button icon="back">推荐给有货好友</mt-button>
 			    </div>
 			  </router-link>
@@ -113,6 +116,7 @@
 	
 	import {Header,Cell,Switch,Popup,Button} from 'mint-ui';
 	import Vue  from 'vue';
+	import mineCom from './common/mine-common.js';
 	
 	Vue.component(Header.name,Header);
 	Vue.component(Cell.name,Cell);
@@ -124,10 +128,21 @@
 		data(){
 			return{
 				about_show:false,
-				share_show:false
+				share_show:false,
+				exitLoginBtn:false
 			}
 		},
 		methods:{
+			user_exit_event(){
+				let user=mineCom.get_userinfo();
+				let user_exist=user.find((item)=>{return item.stage==1;});
+				user_exist.stage=0;
+				mineCom.set_userinfo(user);
+				this.exitLoginBtn=false;
+				this.$store.commit('set_login_stage',0);
+				this.$router.push({name:'mine'});
+				this.$store.commit('set_loginning_stage',1);
+			},
 			aboutEvent(){
 				this.about_show=true;
 			},
@@ -136,6 +151,17 @@
 			},
 			about_page_exit(){
 				this.about_show=false;
+			},
+			share_page_exit(){
+				this.share_show=false;
+			}
+		},
+		mounted(){
+			console.log(this.$store.state.login_stage)
+			if(this.$store.state.login_stage){
+				this.exitLoginBtn=true;
+			}else{
+				this.exitLoginBtn=false;
 			}
 		}
 	}

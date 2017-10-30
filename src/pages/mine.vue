@@ -4,7 +4,7 @@
 			<!--<i class="yo-ico">&#xe61c;</i>-->
 			<div class="mine-tit-up">
 				<mt-popup v-model='popvisible' position='top' class="loginLoad">
-					登录成功!
+					{{login_tit}}
 				</mt-popup>
 				<div class="mine-tit" :style="opa_val">
 					<i class="yo-ico" @click="settting">&#xe660;</i>
@@ -13,7 +13,6 @@
 				</div>
 			</div>
 			<div class="mine-tit-bot">
-
 				<!--<div class="mine_login_suc">
 				登录成功！
 			</div>-->
@@ -170,7 +169,8 @@
 			return {
 				opa_val: '',
 				login:false,
-				popvisible:false
+				popvisible:false,
+				login_tit:'登录成功！'
 			}
 		},
 		computed:{
@@ -190,20 +190,33 @@
 			},
 			getLoginUser(){
 				let users=mineCom.get_userinfo();
-				let exist_login=users.find((item) => item.stage);
-				if(!!exist_login){
-					this.login=true;
-					return exist_login;
-				}else{
-					this.login=false;
-					return '';
+				if(!!users){
+					let exist_login=users.find((item) => item.stage);
+					if(!!exist_login){
+						this.login=true;
+						return exist_login;
+					}else{
+						this.login=false;
+						return '';
+					}
 				}
 			},
 			loginndedLoad(){
-				if(this.getLoginUser().stage){
+				if(this.$store.state.login_first){
 					this.popvisible=true;
 					let timer_load=setTimeout(()=>{
+						this.$store.commit('set_login_first',0);
 						clearTimeout(timer_load);
+						this.popvisible=false;
+					},1000)
+				}
+				if(this.$store.state.loginning_stage){
+					this.login_tit='退出登录！';
+					this.popvisible=true;
+					let timer_load=setTimeout(()=>{
+						this.$store.commit('set_login_first',0);
+						clearTimeout(timer_load);
+						this.login_tit="登录成功！";
 						this.popvisible=false;
 					},1000)
 				}

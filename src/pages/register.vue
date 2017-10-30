@@ -116,17 +116,19 @@
 				let user_index = get_user.length - 1;
 				get_user[user_index].password = this.reg_code;
 				window.localStorage.setItem('users_info', JSON.stringify(get_user));
-				this.$router.push({
-					name: 'login'
-				});
 				Indicator.open({
 						text: '注册中...',
 						spinnerType: 'fading-circle'
 					})
+					this.popupVisible = false;
+					this.popup_num = false;
 					let timer_tip = setTimeout(() => {
 						Indicator.close();
+						this.$store.commit('set_register_stage',1);
 						clearTimeout(timer_tip);
-						this.popupVisible = true;
+						this.$router.push({
+							name: 'login'
+						});
 					}, 1500)
 			},
 			psd_show() {
@@ -169,23 +171,14 @@
 					if(!!user_arr) {
 						let exist_user = user_arr.find(item => item.phone == this.$refs.reg_num.value);
 						if(!!exist_user) {
-							console.log('content')
 							MessageBox.alert('用户名已注册', '提示').then(() => {
 								this.popup_num = false;
 							});
 							return '';
+						}else{
+							this.popupVisible=true;
 						}
 					}
-
-//					Indicator.open({
-//						text: '注册中...',
-//						spinnerType: 'fading-circle'
-//					})
-//					let timer_tip = setTimeout(() => {
-//						Indicator.close();
-//						clearTimeout(timer_tip);
-//						this.popupVisible = true;
-//					}, 1500)
 					if(this.$refs.reg_num.value.length !== 11) {
 						this.showAlert = true;
 						var time_alert = setTimeout(function() {
@@ -202,7 +195,6 @@
 					}
 					this.reg_phone = this.$refs.reg_num.value;
 					this.check_users(user_info);
-
 				}
 			},
 			check_users(user_info) {
