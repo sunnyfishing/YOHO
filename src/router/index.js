@@ -39,7 +39,8 @@ export default new Router({
 				},
 				children:[{
 					path: '/sort-det',
-					component: sortDet,					
+					component: sortDet,	
+					name:'sort-det'
 				}]
 			},
 			{

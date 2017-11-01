@@ -2,7 +2,7 @@
 	<div class="listPage">
 		<div class="tit">
 			<div>
-				<router-link tag="i" :to="{path:'/sort-det'}">
+				<router-link tag="li" :to="'/sort-det'">
 					Back
 				</router-link>
 				<span>{{this.$route.query.id}}</span>
