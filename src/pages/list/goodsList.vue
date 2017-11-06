@@ -14,7 +14,7 @@
 					<i>...</i>
 				</div>
 			</router-link>
-			
+
 		</ul>
 	</div>
 </template>
@@ -24,7 +24,7 @@ import axios from 'axios';
 import { Lazyload } from 'mint-ui';
 import Vue from 'vue';
 import { Indicator } from 'mint-ui';
-import {store} from '../../store/index.js'
+import store from '../../store/index.js'
 import { mapState } from 'vuex'
 Vue.use(Lazyload);
 

@@ -1,7 +1,21 @@
 @charset 'utf-8';
 
 .shop_car{
+  @include  flexbox();
+  @include flex-direction(column);
+  width:100%;
+  height:3.9rem;
+  // background:#F0F0F0;
     .shop_car_header{
+      .h1{
+        font-size:.18rem!important;
+        line-height: .18rem!important;
+        height: .18rem!important;
+      }
+      .tit_btn{
+        font-size:.12rem;
+        letter-spacing: 2px;
+      }
         .shop_car_header_tit{
             height: .42rem;
             background: #444;
@@ -26,19 +40,39 @@
             }
         }
     }
-}
 
+}
+#shop_buy_i{
+  width: 100%;
+  background:white;
+  line-height: .4rem;
+  font-size:.12rem;
+  height: .4rem;
+  padding:0 .14rem;
+  letter-spacing: 1px;
+  margin-bottom: .1rem;
+  span{
+     @include flexbox();
+    height:.4rem;
+    float: left;
+  }
+  span:last-child{
+    float: right;
+  }
+}
 .maylike_tit{
     margin-top: .2rem;
+    @include flexbox();
     @include border(1px 0 0 0,black,solid)
+    height:.2rem;
     width:100%;
-    text-align: center;
+    @include justify-content(center);
 }
 
 .chop_car_main_notnull{
     .shopcar_det{
         width: 100%;
-        height: 100%;
+        // height: 100%;
         ul{
             width: 100%;
             height: 100%;
@@ -49,3 +83,310 @@
     }
 }
 
+%center-middle{
+  @include flexbox();
+  @include justify-content(center);
+  @include align-items(center);
+}
+//抽离的购物车插件
+.shop_car_main_notnull{
+  background:#F0F0F0;
+  width: 100%;
+  // height: 100%;
+  margin-top: .42rem;
+  .shop_car_cal{
+    width: 100%;
+    height: .55rem;
+    @include flexbox();
+    @include border(1px 0 1px 0);
+    position: fixed;
+    bottom: .42rem;
+    z-index: 99999;
+    background:white;
+    .edit_o{
+      width: 100%;
+      height: 100%;
+      ul{
+        width: 100%;
+        height: 100%;
+        letter-spacing: 1px;
+        @include flexbox();
+        li:first-child{
+          width: .5rem;
+          padding-left: .14rem;
+          @include flexbox();
+          @include align-items(center);
+          @include justify-content(center);
+          @include flex-direction(column);
+          i{
+            width: .2rem;
+            height:.2rem;
+            background:black;
+            color: white;
+            @include border-radius(50%);
+            text-align: center;
+            line-height: .2rem;
+          }
+        }
+        li:nth-child(2){
+          @include flexbox();
+          @include flex();
+          padding-right: .12rem;
+          width: 100%;
+          @include flex-direction(column);
+          @include justify-content(center);
+          @include align-items(flex-end);
+          p:first-child{
+            color:#CF1529;
+          }
+          p:last-child{
+           color:#999999;
+           font-size:.12rem;
+          }
+        }
+        li:last-child{
+          width: .70rem;
+          height: 100%;
+          @include flexbox();
+          @include align-items(center);
+          @include justify-content(flex-end);
+          margin-right:.1rem;
+          .ok_btn{
+            width: .70rem;
+            height: .38rem;
+            @include border-radius(5px);
+            color: white;
+            background:#CE0219;
+            text-align: center;
+            line-height:.358rem;
+          }
+        }
+      }
+    }
+    .notedit_o{
+      width: 100%;
+      height: 100%;
+      ul{
+        width:100%;
+        height: 100%;
+        @include flexbox();
+        @include justify-content(space-between);
+        text-align: center;
+        line-height: .38rem;
+        letter-spacing: 1px;
+        li:first-child{
+          width: .5rem;
+          height: 100%;
+          @include flexbox();
+          @include justify-content(center);
+          @include align-items(center);
+          @include flex-direction(column);
+          padding-left:.14rem;
+          p{
+            height: .2rem;
+            line-height: .208rem;
+          }
+          .select_btn{
+            width: .2rem;
+            height: .2rem;
+            line-height: .2rem;
+            text-align: center;
+            color:white;
+            @include border-radius(50%);
+            background:black;
+          }
+        }
+        li:last-child{
+          @include flex();
+          width: 100%;
+          color: white;
+          @include flexbox();
+          @include align-items(center);
+          @include justify-content(flex-end);
+          .collect{
+            width: .82rem;
+            height: .38rem;
+            @include border-radius(5px);
+            margin-right:.1rem;
+            background:#444444;
+          }
+          .delete{
+            width: .7rem;
+            height:.38rem;
+            background: #CE0219;
+            @include border-radius(5px);
+            margin-right:.1rem;
+          }
+        }
+      }
+    }
+  }
+  .shop-tit{
+    padding:0 .14rem;
+    width: 100%;
+    height: .3rem;
+    background:#FC7E81;
+    color: white;
+    font-size: .12rem;
+    letter-spacing:1px;
+    @include flexbox();
+    p{
+      @extend %center-middle;
+      height: 100%;
+      @include flex();
+      width: 100%;
+    }
+    i{
+      height: 100%;
+      width: .1rem;
+      line-height: .3rem;
+    }
+  }
+  .shopcar_det{
+    width: 100%;
+    background:#F0F0F0;
+    @include flexbox();
+    @include flex-direction(column);
+    .shopcar_tit{
+      background:white;
+      @include flexbox();
+      @include align-items(center);
+      @include justify-content(space-between);
+      width:100%;
+      padding:0 .14rem;
+      height: .32rem;
+      font-size:.12rem;
+      letter-spacing: 1px;
+      @include border(0px 0 1px 0,black,solid);
+      p{
+        @include flexbox();
+        .dazhe{
+          width:.15rem;
+          height:.15rem;
+          text-align: center;
+          line-height: .15rem;
+          margin-right: .05rem;
+          @include border-radius(50%);
+          color: white;
+          background: #FE5256;
+        }
+      }
+    }
+    >ul{
+      background:white;
+      margin-bottom: .1rem;
+      @include flexbox();
+      width: 100%;
+      height: 1.08rem;
+      li:first-child{
+        @extend %center-middle;
+        width: .47rem;
+        height:100%;
+        .select_btn{
+          width: .2rem;
+          height: .2rem;
+          line-height: .2rem;
+          text-align: center;
+          color:white;
+          @include border-radius(50%);
+          background:black;
+        }
+      }
+      li:nth-child(2){
+        height:100%;
+        width: .7rem;
+        @extend %center-middle;
+      }
+      >li:nth-child(3){
+        @include flex();
+        font-size:.12rem;
+        letter-spacing: 1px;
+        height:100%;
+        padding:.25rem .1rem .2rem .1rem;
+        p{
+          width:100%;
+        }
+        .shop_info{
+          width:1.5rem;
+          height: .72rem;
+          margin-top: -.15rem;
+          @include border(1px 1px 1px 1px ,black,solid);
+          .shop_info_top{
+            width:100%;
+            height: .36rem;
+            @include flexbox();
+            li:first-child{
+              width:.36rem;
+              height:.36rem;
+              @include border(0 1px 1px 0 );
+              text-align: center;
+              line-height: .36rem;
+            }
+            li:nth-child(2){
+              @include flex();
+              width: 100%;
+              @include border( 0 0 1px 0);
+            }
+            li:last-child{
+              width:.36rem!important;
+              @include border(0 0 1px 1px);
+              height:.36rem!important;
+              line-height: .36rem!important;
+              text-align: center;
+            }
+          }
+          .shop_info_bottom{
+            @include flexbox();
+            @include justify-content(space-between);
+            @include align-items(center);
+            height:.36rem;
+            width:100%;
+            padding:0 .08rem;
+          }
+        }
+        .shop_dec{
+          height:.3rem;
+        }
+        .shop_style{
+          color: #C8C8C8;
+        }
+        .shop_price{
+          color:#CD2B3D;
+          font-size:.14rem;
+        }
+      }
+      >li:last-child{
+        width: .3rem;
+        height:100%;
+        color: #C0C0C0;
+        padding-top:.28rem;
+      }
+    }
+  }
+}
+
+
+.select_btn{
+  padding-left: .02rem;
+}
+.not_select{
+  width: .2rem;
+  height: .2rem;
+  line-height: .2rem;
+  text-align: center;
+  @include border(1px 1px 1px 1px ,black,solid,50%);
+  background:white!important;
+}
+.shop_loaded{
+  width: 100%;
+}
+
+//加载动画样式
+.shop_car_loadding{
+  width: 100%;
+  @include flexbox();
+  @include justify-content(center);
+  @include align-items(center);
+  height: 5rem;
+  background: white;
+}
