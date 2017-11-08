@@ -30,32 +30,45 @@
 			<Swipe :ban="allimg.list[0].data"></Swipe>
 		</div>
 		<div class="new">
-			<img v-lazy.container="allimg.list[2].data.banner_image[0].src.slice(0,-39)" />
-			<img v-lazy.container="allimg.list[4].data.list[0].src.slice(0,-39)" />
+			<img v-lazy.container="allimg.list[2].data.list[0].src.slice(0,-39)" />
+			<img v-lazy.container="allimg.list[3].data.list[0].src.slice(0,-39)" />
 			<div class="small">
-				<img v-lazy.container="allimg.list[6].data.list[0].src.slice(0,-39)" />
-				<img v-lazy.container="allimg.list[6].data.list[1].src.slice(0,-39)" />
+				<img v-lazy.container="allimg.list[4].data.list[0].src.slice(0,-39)" class="cao1"/>
+				<img v-lazy.container="allimg.list[4].data.list[1].src.slice(0,-39)" class="cao1"/>
 			</div>
+			<div class="small">
+				<img v-lazy.container="allimg.list[5].data.list[0].src.slice(0,-39)" class="cao2"/>
+				<img v-lazy.container="allimg.list[5].data.list[1].src.slice(0,-39)" class="cao2"/>
+			</div>
+			<div class="small">
+				<img v-lazy.container="allimg.list[6].data.list[0].src.slice(0,-39)" class="cao3"/>
+				<img v-lazy.container="allimg.list[6].data.list[1].src.slice(0,-39)" class="cao3"/>
+			</div>
+			<div class="small">
+				<img v-lazy.container="allimg.list[7].data.list[0].src.slice(0,-39)" class="cao4"/>
+				<img v-lazy.container="allimg.list[7].data.list[1].src.slice(0,-39)" class="cao4"/>
+			</div>
+			<img v-lazy.container="allimg.list[8].data.list[0].src.slice(0,-39)" />
 		</div>
-		<List :img="allimg" big="8" small="9"></List>
-		<List :img="allimg" big="11" small="12"></List>
-		<List :img="allimg" big="14" small="15"></List>
+		<List :img="allimg" big="13" small="14"></List>
+		<List :img="allimg" big="16" small="17"></List>
+		<List :img="allimg" big="19" small="20"></List>
 		<Tit>热门品类</Tit>
 		<div class="classify">
 			<ul>
-				<li v-for="val in allimg.list[20].data.list">
+				<li v-for="val in allimg.list[25].data.list">
 					<img v-lazy.container="val.src.slice(0,-39)" />
 				</li>
 			</ul>
 		</div>
-		<Listtwo :img="allimg" big="22" small="23" class="list2"></Listtwo>
-		<Listtwo :img="allimg" big="28" small="29" class="list2"></Listtwo>
+		<Listtwo :img="allimg" big="33" small="34" class="list2"></Listtwo>
+		<Listtwo :img="allimg" big="27" small="28" class="list2"></Listtwo>
 		<Tit>编辑推荐</Tit>
 		<div class="swipe2">
-			<Swipe :ban="allimg.list[31].data.collocation.list"></Swipe>
+			<Swipe :ban="allimg.list[36].data.collocation.list"></Swipe>
 		</div>
-		<Listtwo :img="allimg" big="34" small="35" class="list3"></Listtwo>
-		<Listtwo :img="allimg" big="37" small="38" class="list3"></Listtwo>
+		<Listtwo :img="allimg" big="39" small="40" class="list3"></Listtwo>
+		<Listtwo :img="allimg" big="42" small="43" class="list3"></Listtwo>
 		<Tit>你可能喜欢</Tit>
 		<Like></Like>
 	</mt-loadmore>
@@ -133,7 +146,7 @@
 			},
 		},
 		computed:{
-			
+
 		},
 		components:{
 			Swipe,

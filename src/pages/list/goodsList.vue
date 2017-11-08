@@ -14,7 +14,7 @@
 					<i>...</i>
 				</div>
 			</router-link>
-			
+
 		</ul>
 	</div>
 </template>
@@ -24,7 +24,7 @@ import axios from 'axios';
 import { Lazyload } from 'mint-ui';
 import Vue from 'vue';
 import { Indicator } from 'mint-ui';
-import {store} from '../../store/index.js'
+import store from '../../store/index.js'
 import { mapState } from 'vuex'
 Vue.use(Lazyload);
 
@@ -36,13 +36,17 @@ export default{
 	},
 	mounted(){
 		Indicator.open('加载中...');
-		axios.get('/api/?limit=20&method=app.search.productList&page=1&query='+this.sendType)
+		// axios.get('/api/?limit=20&method=app.search.productList&page=1&query='+this.sendType)
+		axios.get('/node/api/goods_list/getlist?pageSize=20&page=1&term={"small_sort_name":"'+this.sendType+'"}')
 		.then(function(response){
-			this.goodsArr = response.data.data.product_list;
-			//console.log(this.goodsArr.length);
+			console.log(response);
+			// this.goodsArr = response.data.data.product_list;
+			// for(var i=0; i<this.goodsArr.length; i++){
+			// 	this.goodsArr[i].default_images = this.goodsArr[i].default_images.split('?')[0];
+			// }
+			this.goodsArr = response.data.data.data.result;
 			for(var i=0; i<this.goodsArr.length; i++){
-				this.goodsArr[i].default_images = this.goodsArr[i].default_images.split('?')[0];
-				//console.log(this.goodsArr[i].default_images);
+				this.goodsArr[i].default_images = "http://localhost:5000/admin/images/"+this.goodsArr[i].default_images;
 			}
 			Indicator.close();
 		}.bind(this))

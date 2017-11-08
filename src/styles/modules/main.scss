@@ -77,11 +77,11 @@
         margin: 0 auto;
         img{
             width: 100%;
-            height: 1.47rem;
+            // height: 1.47rem;
         }
         .small{
-            padding-top: 10px;
-            height: 1.47rem;
+            // padding-top: 10px;
+            // height: 0.74rem;
             img{
                 width: 1.47rem;
                 &:nth-child(1){
@@ -89,6 +89,18 @@
                 }
                 &:nth-child(2){
                     float: right;
+                }
+                &.cao1{
+                  height: .74rem
+                }
+                &.cao2{
+                  height: .89rem
+                }
+                &.cao3{
+                  height: 1.22rem
+                }
+                &.cao4{
+                  height: 1.31rem
                 }
             }
         }
