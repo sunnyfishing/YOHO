@@ -9,7 +9,7 @@
 					<i class="yo-ico">&#xe6a4;</i>
 					<span>首页</span>
 				</router-link>
-				<router-link tag='li' to="/sort-det">
+				<router-link tag='li' to="/sort-det?id=上衣">
 					<i class="yo-ico">&#xe6ca;</i>
 					<span>分类</span>
 				</router-link>
@@ -34,9 +34,8 @@
 	export default {
 		data(){
 			return {
-				
+
 			}
 		}
 	}
 </script>
-

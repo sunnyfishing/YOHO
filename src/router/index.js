@@ -22,7 +22,7 @@ export default new Router({
 	routes: [{
 		path: '/',
 		component: Frame,
-		redirect: '/mine',
+		redirect: '/main',
 		children: [{
 				path: '/main',
 				component: Main,
@@ -31,15 +31,9 @@ export default new Router({
 			{
 				path: '/classify',
 				component: Classify,
-				redirect:{
-					path:'/sort-det',
-					query:{
-						id:'上衣'
-					}
-				},
 				children:[{
 					path: '/sort-det',
-					component: sortDet,					
+					component: sortDet,
 				}]
 			},
 			{
