@@ -94,12 +94,12 @@
 				<img src="../assets/bottom.jpg"/>
 			</div>
 		</div>
-		<div class="details_footer">
+		<div class="details_footer" v-if="details_footer_show">
 			<ul>
-				<li>
+				<router-link tag="li" to="/shopcat">
 					<i class="yo-ico">&#xe68c;</i>
 					<span>购物车</span>
-				</li>
+				</router-link>
 				<li>
 					<i class="yo-ico">&#xe64c;</i>
 					<span>品牌店铺</span>
@@ -108,17 +108,19 @@
 					<i class="yo-ico">&#xe72d;</i>
 					<span>收藏</span>
 				</li>
-				<li>
+				<li @click="showselect">
 					<p>加入购物车</p>
 				</li>
 			</ul>
 		</div>
+		<Selectsize :showmodal="select_show" :change="changestatus"></Selectsize>
 	</div>
 </template>
 
 <script>
 	import axios from 'axios';
 	import Vue from 'vue';
+	import Selectsize from '../components/select-size.vue'
 	import { Swipe, SwipeItem } from 'mint-ui';
 	import { Indicator } from 'mint-ui';
 	import { Navbar, TabItem } from 'mint-ui';
@@ -142,7 +144,12 @@
 				opc:0,
 				productId:820550,
 				productskn:51656964,
+				details_footer_show:false,
+				select_show : false
 			}
+		},
+		components:{
+			Selectsize
 		},
 		methods:{
 			op(event){
@@ -151,15 +158,24 @@
 			},
 			frameload(e){
 				e.target.height=e.target.contentWindow.document.body.scrollHeight
+			},
+			showselect(){
+				this.select_show = true
+			},
+			changestatus(){
+				this.select_show = false
 			}
 		},
 		mounted(){
+			this.productId=this.$route.query.product_id;
+			this.productskn=this.$route.query.product_skn;
 			Indicator.open('加载中...');
 			axios.get('/first/?method=app.product.data&product_skn='+this.productskn).
 			then((data)=>{
 				this.details=data.data.data;
 				this.success=true;
 				Indicator.close();
+				this.details_footer_show=true
 			});
 			axios.get('/first/?method=app.product.promotion&product_skn='+this.productskn).
 			then((data)=>{

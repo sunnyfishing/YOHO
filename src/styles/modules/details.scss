@@ -52,7 +52,7 @@
             width: 100%;
             .goods_name,.goods_price,.cu,ul{
                width: 100%;
-               height: .35rem; 
+               height: .35rem;
                background: rgba(0,0,0,.5);
                padding-left: 16px;
                line-height: .35rem;
@@ -197,7 +197,7 @@
                                 color: #999;
                             }
                         }
-                    }    
+                    }
                 }
             }
             .more{
@@ -271,5 +271,10 @@
                 }
             }
         }
+    }
+    .mint-popup{
+      width: 100%;
+      height: 2rem;
+      background: white
     }
 }
