@@ -19,7 +19,7 @@
 			</label>
 			<label class="register_code">
 				<span>潮流口令</span>
-				<input type="text" name="" id="" value="" ref="reg_user"/>
+				<input type="text" name="" id="" value="" ref="reg_user" v-model="username"/>
 			</label>
 			<div :class="register_next_class" @click="register_next">
 				<span>下一步</span>
@@ -43,7 +43,7 @@
 				</mt-header>
 				<div class="reg_num_bot">
 					<p>请设置您的密码：</p>
-					<label><input autofocus :type="pas_showtype" v-model='reg_code' autofocus/><i class="yo-ico" @click="psd_show"><span v-show='pas_show'>&#xe986;</span><span v-show='!pas_show'>&#xe985;</span></i></label>
+					<label><input autofocus :type="pas_showtype" v-model='reg_psd' autofocus/><i class="yo-ico" @click="psd_show"><span v-show='pas_show'>&#xe986;</span><span v-show='!pas_show'>&#xe985;</span></i></label>
 					<button @click="reg_pad_btn" :class="{next_psd_active}">下一步</button>
 				</div>
 			</mt-popup>
@@ -52,7 +52,7 @@
 </template>
 <script>
 	import Bus from '../components/Bus.js';
-	import axios from 'axios';
+	var axios =require('axios');
 	import vue from 'vue';
 	import { Toast, Indicator, Popup, Header, Button, MessageBox } from 'mint-ui';
 	import mineCom from './common/mine-common';
@@ -81,15 +81,17 @@
 				popup_num: false,
 				reg_code: '',
 				reg_phone: '',
+				reg_psd:'',
 				pas_show: true,
 				pas_showtype: 'password',
+				username:''
 			}
 		},
 		computed: {
 
 		},
 		watch: {
-			reg_code() {
+			reg_psd() {
 				if(!!this.reg_code) {
 					this.next_psd_active = true;
 				} else {
@@ -97,7 +99,22 @@
 				}
 			}
 		},
+		mounted() {
+			this.dis_name = this.$route.query.target_dis_name || '中国';
+		},
 		methods: {
+			res_socket(username){
+				var ws = new WebSocket('ws://localhost:7000')
+				ws.onopen=function(){
+					ws.send(username)
+				}
+				ws.onmessage=function(re){
+					console.log(re)
+				}
+				ws.onclose=function(data){
+					console.log('YOHO的userSocket关闭了')
+				}
+			},
 			psd_exit() {
 				this.back();
 			},
@@ -112,9 +129,26 @@
 				this.popupVisible = false;
 			},
 			reg_pad_btn() {
+				'use strict';
 				let get_user = mineCom.get_userinfo();
 				let user_index = get_user.length - 1;
 				get_user[user_index].password = this.reg_code;
+				let {username ,password , phone}=get_user[get_user.length-1]
+				let roles="0"
+				let createTime=new Date().toLocaleDateString()
+				axios.post('/node/users/register',{
+					username,
+					password,
+					phone,
+					roles,
+					createTime
+				})
+					.then(function(rs){
+						console.log(rs)
+					}).catch(function(err){
+						console.log(err)
+					})
+				this.res_socket(username)
 				window.localStorage.setItem('users_info', JSON.stringify(get_user));
 				Indicator.open({
 						text: '注册中...',
@@ -174,7 +208,6 @@
 							MessageBox.alert('用户名已注册', '提示').then(() => {
 								this.popup_num = false;
 							});
-							return '';
 						}else{
 							this.popupVisible=true;
 						}
@@ -191,9 +224,11 @@
 						"phone": this.$refs.reg_num.value,
 						"password": '',
 						"register_dis": this.dis_name,
-						"stage": 0
+						"stage": 0,
+						"username":this.username
 					}
 					this.reg_phone = this.$refs.reg_num.value;
+					console.log(user_info.username)
 					this.check_users(user_info);
 				}
 			},
@@ -212,11 +247,11 @@
 				this.popup_num = true;
 			},
 			get_userinfo() {
+				if(!window.localStorage.getItem('users_info')){
+					window.localStorage.setItem('users_info',[])
+				}
 				return JSON.parse(window.localStorage.getItem('users_info'));
 			}
-		},
-		mounted() {
-			this.dis_name = this.$route.query.target_dis_name || '中国';
 		}
 	}
 </script>

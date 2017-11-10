@@ -105,7 +105,7 @@
 			  		</ul>
 			  	</div>
 			  	<div class="share_show_bottom">
-			  		
+
 			  	</div>
 			  </div>
 		</mt-popup>
@@ -113,17 +113,17 @@
 </template>
 
 <script>
-	
+
 	import {Header,Cell,Switch,Popup,Button} from 'mint-ui';
 	import Vue  from 'vue';
 	import mineCom from './common/mine-common.js';
-	
+
 	Vue.component(Header.name,Header);
 	Vue.component(Cell.name,Cell);
 	Vue.component(Switch.name,Switch);
 	Vue.component(Popup.name,Popup);
 	Vue.component(Button.name,Button);
-	
+
 	export default {
 		data(){
 			return{
@@ -157,7 +157,6 @@
 			}
 		},
 		mounted(){
-			console.log(this.$store.state.login_stage)
 			if(this.$store.state.login_stage){
 				this.exitLoginBtn=true;
 			}else{
@@ -165,7 +164,7 @@
 			}
 		}
 	}
-	
+
 </script>
 
 <style>

@@ -1,7 +1,7 @@
 <template>
 	<div id="login">
 		<mt-popup v-model='popvisible' position='top' class="registerLoad">
-			登录成功!
+			注册成功!
 		</mt-popup>
 		<div class="login-header">
 			<div class="login-head">
@@ -123,7 +123,7 @@
 						return '';
 					})
 				}
-				
+
 			},
 			check_password(data,index) {
 				if(index==''||typeof index == 'undefined'){ return '';}
