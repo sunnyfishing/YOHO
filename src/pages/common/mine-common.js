@@ -1,7 +1,10 @@
 
 
 const mineCom={
-	get_userinfo(){
+	get_userinfo() {
+		if(!window.localStorage.getItem('users_info')){
+			window.localStorage.setItem('users_info','[]')
+		}
 		return JSON.parse(window.localStorage.getItem('users_info'));
 	},
 	set_userinfo(data_json){
