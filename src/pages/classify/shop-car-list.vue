@@ -191,4 +191,7 @@ export default {
 </script>
 
 <style lang="css" scoped>
+.notedit_o>ul{
+  bottom:.5rem!important;
+}
 </style>

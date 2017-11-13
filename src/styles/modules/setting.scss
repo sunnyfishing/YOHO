@@ -82,6 +82,7 @@
     height: 100%;
     @include flexbox();
     @include flex-direction(column);
+    background:white;
     .share_page_header{
         height: .42rem;
         width: 100%;
@@ -134,4 +135,3 @@
         @include border-radius(5px);
     }
 }
-
