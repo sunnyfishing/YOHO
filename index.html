@@ -6,8 +6,31 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
   </head>
   <body>
+    <style>
+     .fade-enter-active, .fade-leave-active {
+        transition: all .5s
+      }
+      .fade-enter, .fade-leave-to /* .fade-leave-active in below version 2.1.8 */ {
+        /* opacity: 0; */
+        background:red;
+      }
+    </style>
     <div id="app">
-    	<router-view></router-view>
+      <transition name="fade" mode="out-in">
+        <router-view></router-view>
+        <!-- <test></test> -->
+      </transition>
     </div>
+    <!-- <div id="demo">
+        <button v-on:click="show = !show" @click="fasongqingqiu">
+          Toggle
+        </button>
+        <transition name="fade">
+          <p v-if="show">hello</p>
+        </transition>
+      </div> -->
+      <script>
+        
+      </script>
   </body>
 </html>

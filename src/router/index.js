@@ -24,9 +24,9 @@ export default new Router({
 		component: Frame,
 		redirect: '/main',
 		children: [{
-				path: '/main',
-				component: Main,
-				name:'main',
+			path: '/main',
+			component: Main,
+			name:'main',
 			},
 			{
 				path: '/classify',
