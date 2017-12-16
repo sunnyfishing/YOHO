@@ -12,7 +12,7 @@
     data(){
       return {
         name:'zzz',
-        lists:['zzz1','zzz2','zzz3']
+        lists:['zzz1','zzz2','zzz3'],
       }
     },
     mounted(){
